@@ -5,11 +5,11 @@ import './App.css';
 import Activity from '../components/Activity/Activity';
 // import AddNewActivity from '../components/AddNewActivity/AddNewActivity';
 import Home from '../components/Home/Home';
-// import Login from '../components/Login/Login';
+import Login from '../components/Login/Login';
 // import MyCollection from '../components/MyCollection/MyCollection';
 // import Navbar from '../components/Navbar/Navbar';
 // import Recommendation from '../components/Recommendation/Recommendation';
-// import Register from '../components/Register/Register';
+import Register from '../components/Register/Register';
 // import SingleActivity from '../components/SingleActivity/SingleActivity';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
@@ -48,6 +48,16 @@ class App extends Component {
                   path="/activity"
                   authed={this.state.authed}
                   component={Activity}
+                  />
+                   <PublicRoute
+                  path="/register"
+                  authed={this.state.authed}
+                  component={Register}
+                  />
+                   <PublicRoute
+                  path="/login"
+                  authed={this.state.authed}
+                  component={Login}
                   />
                 </Switch>
               </div>
