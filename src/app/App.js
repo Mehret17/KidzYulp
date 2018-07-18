@@ -11,6 +11,8 @@ import Login from '../components/Login/Login';
 // import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
 // import SingleActivity from '../components/SingleActivity/SingleActivity';
+import fbConnection from '../firebaseRequests/connection';
+fbConnection();
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   return (

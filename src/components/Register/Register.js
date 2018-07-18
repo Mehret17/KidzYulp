@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
+import authRequests from '../../firebaseRequests/auth';
 import './Register.css';
 
 class Register extends React.Component {
@@ -11,13 +13,28 @@ class Register extends React.Component {
   }
 
   registerClickEvent = (e) => {
-
+    const {user} = this.state;
+    e.preventDefault();
+    authRequests
+    .registerUser(user)
+    .then(() => {
+      this.props.his.push('/mycollection');
+    })
+    .catch((err) => {
+      console.error('there was an error with register', err);
+    });
   };
 
   emailChange = (e) => {
     const tempUser = {...this.state.user};
     tempUser.email = e.target.value;
     this.setState({user: tempUser});
+  };
+
+  passwordChange = (e) => {
+    const tempUser = {...this.state.user};
+    tempUser.password = e.target.value;
+    this.setState({user: tempUser})
   };
   
   render () {
@@ -55,6 +72,11 @@ class Register extends React.Component {
       value={user.password}
       onChange={this.passwordChange}
       />
+      </div>
+      </div>
+      <div className="form-group">
+      <div className="col-sm-offset-2 col-sm-10 text-center">
+      <Link to="/login">Neet to Login?</Link>
       </div>
       </div>
       <div className="form-group">
