@@ -3,33 +3,37 @@ import React from 'react';
 import activityRequests from '../../firebaseRequests/activity';
 
 import './Activity.css';
+import SingleActivity from '../SingleActivity/SingleActivity';
 
 class Activity extends React.Component {
   state = {
     activities: [],
   }
-  
-  componentDidMount () {
+
+  componentDidMount() {
     activityRequests
       .getRequest()
       .then((activities) => {
-        this.setState({activities});
+        this.setState({ activities });
       })
       .catch((err) => {
         console.error('error with activity get request', err);
       });
   }
 
-  render () {
+  render() {
     const activityComponents = this.state.activities.map((activity) => {
       return (
-        <h2>{activity.activityName}</h2>
+        <SingleActivity
+          key={activity.id}
+          details={activity}
+        />
       )
     });
     return (
       <div className="Activity">
-      <h1>Activity</h1>
-      {activityComponents}
+        <h1>Activity</h1>
+        {activityComponents}
       </div>
     );
   }
