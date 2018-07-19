@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import activityRequests from '../../firebaseRequests/activity';
 
@@ -31,9 +32,12 @@ class Activity extends React.Component {
       )
     });
     return (
-      <div className="Activity">
+      <div className="header">
         <h1>Activity</h1>
-        {activityComponents}
+        <div className="mainBody">
+          <button><Link to="/login">Add New Activity</Link></button>
+          {activityComponents}
+        </div>
       </div>
     );
   }
