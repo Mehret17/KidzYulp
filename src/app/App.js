@@ -53,6 +53,10 @@ class App extends Component {
     this.removeListener()
   }
 
+  signOut = () => {
+    this.setState({authed: false});
+  }
+
   render() {
     return (
       <div className="App">
@@ -60,6 +64,7 @@ class App extends Component {
           <div>
             <Navbar
               authed={this.state.authed}
+              signOut={this.signOut}
               />
             <div className="container">
               <div className="row">

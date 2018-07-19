@@ -7,10 +7,10 @@ import './Navbar.css';
 
 class Navbar extends React.Component {
   render() {
-    const {authed, runAway} = this.props;
+    const {authed, signOut} = this.props;
     const logoutClickEvent = () => {
       authRequests.logoutUser();
-      runAway();
+      signOut();
     }
 
     return (
