@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import './App.css';
 
 import Activity from '../components/Activity/Activity';
-// import AddNewActivity from '../components/AddNewActivity/AddNewActivity';
+import AddNewActivity from '../components/AddNewActivity/AddNewActivity';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 // import MyCollection from '../components/MyCollection/MyCollection';
@@ -32,6 +32,22 @@ const PublicRoute = ({ component: Component, authed, ...rest }) => {
   )
 }
 
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        authed === true ? (
+          <Component {...props} />
+        ) : (
+            <Redirect
+              to={{ pathname: '/addnewactivity', sate: {from: props.location}}}
+            />
+          )
+      }
+    />
+  )
+}
 
 
 class App extends Component {
@@ -84,6 +100,11 @@ class App extends Component {
                   path="/login"
                   authed={this.state.authed}
                   component={Login}
+                  />
+                   <PrivateRoute
+                  path="/addnewactivity"
+                  authed={this.state.authed}
+                  component={AddNewActivity}
                   />
                 </Switch>
               </div>

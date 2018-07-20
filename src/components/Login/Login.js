@@ -8,8 +8,8 @@ import './Login.css';
 class Login extends React.Component {
   state = {
     user: {
-      email: 'merutaye@gmail.com',
-      password: 'jojogigi1234',
+      email: '',
+      password: '',
     },
   };
 
@@ -19,7 +19,7 @@ class Login extends React.Component {
     authRequests
       .loginUser(user)
       .then(() => {
-      this.props.history.push('/mycollection');
+      this.props.history.push('/mycolllection');
       })
       .catch(error => {
         console.error('there was an error in login', error);
