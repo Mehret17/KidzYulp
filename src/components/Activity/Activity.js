@@ -35,7 +35,7 @@ class Activity extends React.Component {
       <div className="header">
         <h1>Activity</h1>
         <div className="mainBody">
-          <button><Link to="/login">Add New Activity</Link></button>
+          <button><Link to="/addnewactivity">Add New Activity</Link></button>
           {activityComponents}
         </div>
       </div>

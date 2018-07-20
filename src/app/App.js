@@ -15,6 +15,23 @@ import Register from '../components/Register/Register';
 import fbConnection from '../firebaseRequests/connection';
 fbConnection();
 
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        authed === true ? (
+          <Component {...props} />
+        ) : (
+            <Redirect
+              to={{ pathname: '/login', sate: {from: props.location}}}
+            />
+          )
+      }
+    />
+  )
+};
+
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   return (
     <Route
@@ -30,25 +47,7 @@ const PublicRoute = ({ component: Component, authed, ...rest }) => {
       }
     />
   )
-}
-
-const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        authed === true ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-              to={{ pathname: '/addnewactivity', sate: {from: props.location}}}
-            />
-          )
-      }
-    />
-  )
-}
-
+};
 
 class App extends Component {
   state={
