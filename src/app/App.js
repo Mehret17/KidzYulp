@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import firebase from 'firebase';
+
+
+
 import './App.css';
 
 import Activity from '../components/Activity/Activity';
@@ -9,7 +12,7 @@ import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 // import MyCollection from '../components/MyCollection/MyCollection';
 import Navbar from '../components/Navbar/Navbar';
-// import Recommendation from '../components/Recommendation/Recommendation';
+import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
 // import SingleActivity from '../components/SingleActivity/SingleActivity';
 import fbConnection from '../firebaseRequests/connection';
@@ -54,6 +57,19 @@ class App extends Component {
     authed: false,
   }
 
+  // formSubmitEvent = (newActivity) => {
+  //   newActivityRequests.postNewActivity(newActivity)
+  //   .then(() => {
+  //     newActivityRequests.getNewActivity()
+  //     .then((activities) => {
+  //       this.setState({activities});
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.error('error with activity post', err);
+  //   })
+  // }
+
   componentDidMount () {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if(user) {
@@ -85,7 +101,7 @@ class App extends Component {
               <div className="row">
                 <Switch>
                   <Route path="/" exact component={Home} />
-                  <PublicRoute
+                  <PrivateRoute
                   path="/activity"
                   authed={this.state.authed}
                   component={Activity}
@@ -104,6 +120,11 @@ class App extends Component {
                   path="/addnewactivity"
                   authed={this.state.authed}
                   component={AddNewActivity}
+                  />
+                   <PrivateRoute
+                  path="/recommendation"
+                  authed={this.state.authed}
+                  component={Recommendation}
                   />
                 </Switch>
               </div>
