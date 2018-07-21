@@ -5,6 +5,9 @@ import './SingleActivity.css';
 class SingleActivity extends React.Component {
   render() {
     const { details } = this.props;
+    const addCollection = (e) => {
+      this.props.saveActivity(this.props.details)
+    };
     return (
       <div className="container">
         <div className="col-sm-3">
@@ -16,6 +19,7 @@ class SingleActivity extends React.Component {
             <p className="type">{details.type}</p>
             <p className="theme">{details.theme}</p>
             <p className="description">{details.description}</p>
+            <button className="btn btn-primary"onClick={addCollection}>Save</button>
           </div>
         </div>
       </div>
