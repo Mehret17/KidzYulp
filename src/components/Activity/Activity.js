@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import activityRequests from '../../firebaseRequests/activity';
 import './Activity.css';
 import SingleActivity from '../SingleActivity/SingleActivity';
-// import AddNewActivity from '../../AddNewActivity/AddNewActivity';
+import myCollectionRequests from '../../firebaseRequests/mycollection';
 import newActivityRequests from '../../firebaseRequests/addnewactivity';
 // import AddNewActivity from '../AddNewActivity/AddNewActivity';
 
@@ -12,7 +12,27 @@ import newActivityRequests from '../../firebaseRequests/addnewactivity';
 class Activity extends React.Component {
   state = {
     activities: [],
-    // isClicked: false,
+    mycollection: {},
+  }
+
+  saveActivity = (activities) => {
+    const collection = {...this.state.mycollection};
+      collection.name = activities.name
+      collection.imgUrl = activities.imgUrl
+      collection.activityUrl = activities.activityUrl
+      collection.time = activities.time 
+      collection.address = activities.time 
+      collection.type = activities.time 
+      collection.theme = activities.time 
+      collection.description = activities.time 
+      myCollectionRequests
+        .postRequest(collection)
+        .then(() => {
+          this.props.history.push('/mycollection');
+        })
+        .catch((err) => {
+          console.error('error in my collection post', err)
+        })
   }
 
   formSubmitEvent = (newActivity) => {
@@ -47,6 +67,7 @@ class Activity extends React.Component {
         <SingleActivity
           key={activity.id}
           details={activity}
+          saveActivity={this.saveActivity}
         />
       )
     });
