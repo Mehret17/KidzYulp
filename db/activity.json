@@ -1,7 +1,7 @@
 {
 	"activities": {
 		"activity1": {
-			"activityName": "YMCA Summer Camp",
+			"name": "YMCA Summer Camp",
 			"imgUrl": "http://www.nashvilleparent.com/wp-content/uploads/2012/06/YMCAsummer6.jpg",
 			"activityUrl": "http://www.ymcamidtn.org/summer",
 			"time": "7:00 AM – 6:00 PM",
@@ -11,7 +11,7 @@
 			"description": "YMCA Sports Camps provide campers with the opportunity to learn sport-specific skills, which will help them enjoy each sport through fun and exciting drills and games. All skill levels are welcomed and encouraged. Choose from basketball, flag football or soccer camp. This half-day camp can be paired with YMCA Day Camp for a full day of fun! YMCA Sports Camps are offered at the Brentwood, Donelson-Hermitage, North Rutherford (Smyrna), Northwest and Robertson County (Springfield) Ys."
 		},
 		"activity2": {
-			"activityName": "Bare Foot Republic Camp",
+			"name": "Bare Foot Republic Camp",
 			"imgUrl": "https://images-bareFootRepublic.jg",
 			"activityUrl": "https://barefootrepublic.org/",
 			"time": "8:00 AM – 4:00 PM",
@@ -21,7 +21,7 @@
 			"description": "Barefoot Republic is a multi-cultural camp that celebrates diversity and builds unity by facilitating the development of Christ-centered relationships between individuals from diverse cultural, racial and socioeconomic backgrounds. The camp sets upon 110 acres on Barren Lake just north of Nashville and hosts 6 sessions of overnight camp for rising 3rd-12th graders and 2 weeks of day camp for rising 1st-5th graders in Nashville and Franklin, TN. Each session is filled with action-packed and team-building activities, small group time and inspiring evening programs designed to build lifelong friendships. Instruction is given in specialty areas including traditional athletics, extreme sports, performing arts and fine arts."
 		},
 		"activity3": {
-			"activityName": "Travellers Rest Plantation and Museum",
+			"name": "Travellers Rest Plantation and Museum",
 			"imgUrl": "https://images-bareFootRepublic.jg",
 			"activityUrl": "https://travellersrestplantation.org/",
 			"time": "8:00 AM – 4:00 PM",
@@ -31,7 +31,7 @@
 			"description": "School, home-school and scout programs are available year round, focusing on teaching kids about historic Nashville life. Special events throughout the year include The World of the Plantation in April and a Spring Sampler in May.Travel through history and experience a summer of adventure at Travellers Rest Summer Camp, winner of Nickelodeon’s Parents Pick Best Day Cam in Nashville. Junior Docent camp, Histories Mysteries camp, hands-on history camp, folk arts camp, adventures in history camp (includes civil war and frontier adventures."
 		},
 		"activity4": {
-			"activityName": "BHarbor Island yacht Club",
+			"name": "BHarbor Island yacht Club",
 			"imgUrl": "http://www.nashvilleparent.com/wp-content/uploads/2015/04/SailCampPhoto1.jpg",
 			"activityUrl": "https://www.nashvillesailingfoundation.org/",
 			"time": "7:45 AM – 5:30 PM",
@@ -41,7 +41,7 @@
 			"description": "BHarbor Island Yacht Club has offered a Youth Sailing Program for more than 25 years. This year the program is a full-day – 9:00A to 4:00P. We are also offering Extended Care 7:45A to 5:30P at an additional $50 charge. Our Sail Camp program is intended for children and young people ages seven through 17. It is structured with an eye not only toward introducing young people to sailing, but also toward racing, advanced knowledge of small boat handling and skills in a safe, fun environment. The program is taught by knowledgeable, trained young people, all of whom are required to complete a US Sailing counselor training course as they come of age."
 		},
 		"activity5": {
-			"activityName": "Bare Foot Republic Camp",
+			"name": "Bare Foot Republic Camp",
 			"imgUrl": "https://images-bareFootRepublic.jg",
 			"activityUrl": "https://barefootrepublic.org/",
 			"time": "8:00 AM – 4:00 PM",
