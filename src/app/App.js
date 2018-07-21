@@ -10,7 +10,7 @@ import Activity from '../components/Activity/Activity';
 import AddNewActivity from '../components/AddNewActivity/AddNewActivity';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
-// import MyCollection from '../components/MyCollection/MyCollection';
+import MyCollection from '../components/MyCollection/MyCollection';
 import Navbar from '../components/Navbar/Navbar';
 import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
@@ -120,6 +120,11 @@ class App extends Component {
                   path="/addnewactivity"
                   authed={this.state.authed}
                   component={AddNewActivity}
+                  />
+                    <PrivateRoute
+                  path="/mycollection"
+                  authed={this.state.authed}
+                  component={MyCollection}
                   />
                    <PrivateRoute
                   path="/recommendation"

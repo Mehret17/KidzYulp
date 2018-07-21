@@ -17,7 +17,7 @@ const postRequest = (myCollection) => {
 const getRequest = (uid) => {
   return new Promise((resolve, reject) => {
     axios
-     .post(`${constants.firebaseConfig.databaseURL}/myCollection.json?orderBy="uid"&equalTo="${uid}"`)
+     .get(`${constants.firebaseConfig.databaseURL}/myCollection.json?orderBy="uid"&equalTo="${uid}"`)
      .then(res => {
        const myCollections = [];
        if (res.data !==null) {
