@@ -26,7 +26,7 @@ class AddNewActivity extends React.Component {
   };
 
   nameChange = (e) => {
-    this.formFieldStringState('activity', e);
+    this.formFieldStringState('name', e);
   };
 
   imageChange = (e) => {
@@ -59,9 +59,26 @@ class AddNewActivity extends React.Component {
 
   
   formSubmit = (e) => {
-    const {onSubmit} = this.props;
+    const {onSubmit} = this.props.location;
+    const {newActivity} = this.state;
     e.preventDefault();
-    onSubmit(this.state.newActivity)
+    if (
+      newActivity.name &&
+      newActivity.imgUrl &&
+      newActivity.activityUrl &&
+      newActivity.time &&
+      newActivity.address &&
+      newActivity.type &&
+      newActivity.theme &&
+      newActivity.description
+    ) {
+      onSubmit(this.state.newActivity);
+      this.setState({newActivity: defaultActivity});
+      this.props.history.push('/activity');
+    } else {
+      alert ('please fill in all the input');
+
+    }
   }
 
   render() {
