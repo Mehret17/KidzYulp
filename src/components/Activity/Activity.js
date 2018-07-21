@@ -6,7 +6,7 @@ import './Activity.css';
 import SingleActivity from '../SingleActivity/SingleActivity';
 import myCollectionRequests from '../../firebaseRequests/mycollection';
 import newActivityRequests from '../../firebaseRequests/addnewactivity';
-// import AddNewActivity from '../AddNewActivity/AddNewActivity';
+import authRequests from '../../firebaseRequests/auth';
 
 
 class Activity extends React.Component {
@@ -17,14 +17,15 @@ class Activity extends React.Component {
 
   saveActivity = (activities) => {
     const collection = {...this.state.mycollection};
-      collection.name = activities.name
-      collection.imgUrl = activities.imgUrl
-      collection.activityUrl = activities.activityUrl
-      collection.time = activities.time 
-      collection.address = activities.time 
-      collection.type = activities.time 
-      collection.theme = activities.time 
-      collection.description = activities.time 
+      collection.name = activities.name;
+      collection.imgUrl = activities.imgUrl;
+      collection.activityUrl = activities.activityUrl;
+      collection.time = activities.time; 
+      collection.address = activities.address; 
+      collection.type = activities.type; 
+      collection.theme = activities.theme; 
+      collection.description = activities.description;
+      collection.uid = authRequests.getUid(); 
       myCollectionRequests
         .postRequest(collection)
         .then(() => {
