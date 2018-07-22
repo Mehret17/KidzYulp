@@ -2,6 +2,7 @@ import React from 'react';
 
 import myCollectionRequests from '../../firebaseRequests/mycollection';
 import authRequests from '../../firebaseRequests/auth';
+import SingleActivity from '../SingleActivity/SingleActivity';
 import './MyCollection.css';
 
 class MyCollection extends React.Component {
@@ -23,10 +24,11 @@ class MyCollection extends React.Component {
   render () {
     const myCollectionComponent = this.state.myCollections.map((myCollection) => {
       return (
-      <span>
-      {myCollection.id}
-      {myCollection.name}
-      </span>
+      <div>
+      <SingleActivity key={myCollection.id} details={myCollection} 
+      />
+      <button className="btn btn-primary">Update </button>
+      </div>
       )
     })
     return (
