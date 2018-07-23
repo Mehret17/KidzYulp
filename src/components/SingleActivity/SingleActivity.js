@@ -4,7 +4,7 @@ import './SingleActivity.css';
 
 class SingleActivity extends React.Component {
   render() {
-    const { details } = this.props;
+    const {saved, details } = this.props;
     const addCollection = (e) => {
       this.props.saveActivity(this.props.details)
     };
@@ -19,7 +19,18 @@ class SingleActivity extends React.Component {
             <p className="type">{details.type}</p>
             <p className="theme">{details.theme}</p>
             <p className="description">{details.description}</p>
-            <button className="btn btn-primary"onClick={addCollection}>Save</button>
+          {
+              saved ? (
+                <div className="text-center">
+                <button className="btn btn-primary">Update</button>
+                <button className="btn btn-danger">Delete</button>
+                </div>
+              ) : (
+                <div className="text-center">
+                <button className="btn btn-primary"onClick={addCollection}>Save</button>
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
