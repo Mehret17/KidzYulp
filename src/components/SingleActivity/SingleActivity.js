@@ -13,7 +13,7 @@ class SingleActivity extends React.Component {
         <div className="col-sm-3">
           <img src={details.imgUrl} alt={details.imgUrl}/>
           <div className="SingleActivity">
-            <h3 className="name">{details.activityName}</h3>
+            <h3 className="name">{details.name}</h3>
             <p className="time">{details.time}</p>
             <p className="address">{details.address}</p>
             <p className="type">{details.type}</p>

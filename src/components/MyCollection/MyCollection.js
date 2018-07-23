@@ -26,8 +26,8 @@ class MyCollection extends React.Component {
       return (
       <div>
       <SingleActivity key={myCollection.id} details={myCollection} 
+      button className="btn btn-primary"Update
       />
-      <button className="btn btn-primary">Update </button>
       </div>
       )
     })
