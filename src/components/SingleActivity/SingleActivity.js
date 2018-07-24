@@ -3,11 +3,17 @@ import React from 'react';
 import './SingleActivity.css';
 
 class SingleActivity extends React.Component {
+  
   render() {
     const {saved, details } = this.props;
     const addCollection = (e) => {
       this.props.saveActivity(this.props.details)
     };
+
+    const deleteCollection = (e) => {
+      this.props.onClick(this.props.details.id)
+    };
+
     return (
       <div className="container">
         <div className="col-sm-3">
@@ -23,7 +29,7 @@ class SingleActivity extends React.Component {
               saved ? (
                 <div className="text-center">
                 <button className="btn btn-primary">Update</button>
-                <button className="btn btn-danger">Delete</button>
+                <button className="btn btn-danger"onClick={deleteCollection}>Delete</button>
                 </div>
               ) : (
                 <div className="text-center">
