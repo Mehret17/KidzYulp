@@ -3,6 +3,9 @@ import React from 'react';
 import './SingleActivity.css';
 
 class SingleActivity extends React.Component {
+  state = {
+    isClicked: false,
+  }
   
   render() {
     const {saved, details } = this.props;
@@ -12,6 +15,10 @@ class SingleActivity extends React.Component {
 
     const deleteCollection = (e) => {
       this.props.onClick(this.props.details.id)
+    };
+
+    const showForm = (e) => {
+      this.setState({isClicked: !this.state.isClicked})
     };
 
     return (
@@ -28,7 +35,7 @@ class SingleActivity extends React.Component {
           {
               saved ? (
                 <div className="text-center">
-                <button className="btn btn-primary">Update</button>
+                <button className="btn btn-primary"onClick={showForm}>Update</button>
                 <button className="btn btn-danger"onClick={deleteCollection}>Delete</button>
                 </div>
               ) : (
