@@ -9,25 +9,46 @@ import './Recommendation.css';
 class Recommendation extends React.Component {
   state = {
     addedNewActivities: [],
+  };
+
+  // componentDidMount() {
+  //   this.updatedComponent();
+  // };
+
+  updateComponent = () => {
+    addNewActivityRequests
+    .getNewActivities(authRequests.getUid())
+    .then((addedNewActivities) => {
+      this.setState({ addedNewActivities });
+    })
+    .catch((err) => {
+      console.error('error with fis get request', err);
+    });
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.updateComponent();
+  };
+
+  deleteOrderClick = (firebaseId) => {
+    // const firebaseId = this.recomDetails.id;
+    // const {updatedComponent} = this.props.updatedComponent;
     addNewActivityRequests
-      .getNewActivities(authRequests.getUid())
-      .then((addedNewActivities) => {
-        this.setState({ addedNewActivities });
+      .deleteNewActivity(firebaseId)
+      .then(() => { 
+        this.updateComponent();
       })
-      .catch((err) => {
-        console.error('error with fis get request', err);
-      });
-  }
-  
+      .catch(((err) => {
+        console.error('error with delete request', err)
+      }));
+  }; 
   render() {
     const newActivityComponent = this.state.addedNewActivities.map((newActivity) => {
       return (
         <SingleRecommendation
           key={newActivity.id}
           recomDetails={newActivity}
+          onClick={this.deleteOrderClick}
         />
       );
     });
