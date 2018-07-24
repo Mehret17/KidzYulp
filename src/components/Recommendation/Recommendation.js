@@ -1,5 +1,6 @@
 import React from 'react';
 import addNewActivityRequests from '../../firebaseRequests/addnewactivity';
+import authRequests from '../../firebaseRequests/auth';
 
 import SingleRecommendation from '../SingleRecommendation/SingleRecommendation';
 import './Recommendation.css';
@@ -12,7 +13,7 @@ class Recommendation extends React.Component {
 
   componentDidMount() {
     addNewActivityRequests
-      .getNewActivity()
+      .getNewActivities(authRequests.getUid())
       .then((addedNewActivities) => {
         this.setState({ addedNewActivities });
       })

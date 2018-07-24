@@ -25,7 +25,9 @@ class MyCollection extends React.Component {
     const myCollectionComponent = this.state.myCollections.map((myCollection) => {
       return (
       <div>
-      <SingleActivity key={myCollection.id} details={myCollection} saved
+      <SingleActivity
+       key={myCollection.id} 
+       details={myCollection} saved
       />
       </div>
       )

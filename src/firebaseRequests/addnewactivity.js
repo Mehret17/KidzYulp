@@ -21,6 +21,27 @@ const getNewActivity = () => {
   });
 };
 
+const getNewActivities = (uid) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/newActivities.json?orderBy="uid"&equalTo="${uid}"`)
+      .then(res => {
+        const newActivities = [];
+        if (res.data !== null) {
+          Object.keys(res.data).forEach(fbKey => {
+            res.data[fbKey].id = fbKey;
+            newActivities.push(res.data[fbKey]);
+          });
+        }
+        resolve(newActivities);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+
 const postNewActivity = (listing) => {
   return new Promise((resolve, reject) => {
     axios
@@ -34,4 +55,4 @@ const postNewActivity = (listing) => {
   });
 };
 
-export default {getNewActivity, postNewActivity}
+export default {getNewActivity, postNewActivity, getNewActivities}
