@@ -10,16 +10,33 @@ class MyCollection extends React.Component {
     myCollections:[],
   }
 
+  updateComp = () => {
+    myCollectionRequests
+    .getRequest(authRequests.getUid())
+    .then((myCollections) => {
+      this.setState({myCollections});
+    })
+    .catch((err) => {
+      console.error('error with mycollection  get request', err);
+    });
+  }
+
    componentDidMount () {
-     myCollectionRequests
-      .getRequest(authRequests.getUid())
-      .then((myCollections) => {
-        this.setState({myCollections});
+     this.updateComp();
+   };
+
+   deleteMyCollectionClick = (firebaseId) => {
+    // const firebaseId = this.recomDetails.id;
+    // const {updatedComponent} = this.props.updatedComponent;
+    myCollectionRequests
+      .deleteMyCollection(firebaseId)
+      .then(() => { 
+        this.updateComp();
       })
-      .catch((err) => {
-        console.error('error with mycollection  get request', err);
-      });
-   }
+      .catch(((err) => {
+        console.error('error with delete request', err)
+      }));
+  };
 
   render () {
     const myCollectionComponent = this.state.myCollections.map((myCollection) => {
@@ -28,6 +45,7 @@ class MyCollection extends React.Component {
       <SingleActivity
        key={myCollection.id} 
        details={myCollection} saved
+       onClick={this.deleteMyCollectionClick}
       />
       </div>
       )
