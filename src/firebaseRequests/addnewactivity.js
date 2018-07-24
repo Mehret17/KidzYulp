@@ -4,7 +4,7 @@ import constants from '../constants';
 const getNewActivity = () => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/newAtivities.json`)
+      .get(`${constants.firebaseConfig.databaseURL}/newActivities.json`)
       .then(res => {
         const activities = [];
         if (res.data !== null) {
@@ -21,10 +21,31 @@ const getNewActivity = () => {
   });
 };
 
+const getNewActivities = (uid) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/newActivities.json?orderBy="uid"&equalTo="${uid}"`)
+      .then(res => {
+        const newActivities = [];
+        if (res.data !== null) {
+          Object.keys(res.data).forEach(fbKey => {
+            res.data[fbKey].id = fbKey;
+            newActivities.push(res.data[fbKey]);
+          });
+        }
+        resolve(newActivities);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+
 const postNewActivity = (listing) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(`${constants.firebaseConfig.databaseURL}/newAtivities.json`, listing)
+      .post(`${constants.firebaseConfig.databaseURL}/newActivities.json`, listing)
       .then((res) => {
         resolve(res.data);
       })
@@ -34,4 +55,4 @@ const postNewActivity = (listing) => {
   });
 };
 
-export default {getNewActivity, postNewActivity}
+export default {getNewActivity, postNewActivity, getNewActivities}

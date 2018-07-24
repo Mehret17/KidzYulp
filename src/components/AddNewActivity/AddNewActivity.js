@@ -1,4 +1,5 @@
 import React from 'react';
+import authRequests from '../../firebaseRequests/auth';
 
 import './AddNewActivity.css';
 
@@ -61,6 +62,8 @@ class AddNewActivity extends React.Component {
   formSubmit = (e) => {
     const {onSubmit} = this.props.location;
     const {newActivity} = this.state;
+    newActivity.uid = authRequests.getUid();
+    this.setState({newActivity});
     e.preventDefault();
     if (
       newActivity.name &&
