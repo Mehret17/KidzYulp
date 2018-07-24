@@ -1,8 +1,24 @@
 import React from 'react';
+import addNewActivityRequests from '../../firebaseRequests/addnewactivity';
 
 import './SingleRecommendation.css';
 
 class SingleRecommendation extends React.Component {
+
+  deleteOrderClick = () => {
+    const firebaseId = this.props.recomDetails.id;
+    addNewActivityRequests
+      .deleteNewActivity(firebaseId)
+      .then(() => {
+        
+      })
+      .catch(((err) => {
+        console.error('error with delete request', err)
+      }));
+  }
+    
+  
+
   render() {
     const { recomDetails } = this.props;
     return (
@@ -16,7 +32,7 @@ class SingleRecommendation extends React.Component {
             <p className="type">{recomDetails.type}</p>
             <p className="theme">{recomDetails.theme}</p>
             <p className="description">{recomDetails.description}</p>
-            <button className="btn-btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={this.deleteOrderClick}>Delete</button>
           </div>
         </div>
       </div>

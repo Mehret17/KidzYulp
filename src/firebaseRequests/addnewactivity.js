@@ -55,4 +55,17 @@ const postNewActivity = (listing) => {
   });
 };
 
-export default {getNewActivity, postNewActivity, getNewActivities}
+const deleteNewActivity = (newActivityId) => {
+  return new Promise ((resolve, reject) => {
+    axios
+     .delete (`${constants.firebaseConfig.databaseURL}/newActivities/${newActivityId}.json`)
+     .then((res) => {
+       resolve(res);
+     })
+     .catch((err) => {
+       reject(err);
+     });
+  });
+};
+
+export default {getNewActivity, postNewActivity, getNewActivities, deleteNewActivity}
