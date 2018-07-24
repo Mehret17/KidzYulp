@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                       <Link to="/mycollection">My Collection</Link>
                     </li>
                     <li>
-                      <Link to="/myrecommendation">Recommendation</Link>
+                      <Link to="/recommendation">Recommendation</Link>
                     </li>
                     <li className="navbar-form">
                     <button
