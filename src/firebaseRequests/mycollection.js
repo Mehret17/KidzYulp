@@ -47,4 +47,17 @@ const deleteMyCollection = (activityId) => {
   });
 };
 
-export default {postRequest, getRequest, deleteMyCollection}
+const putRequest = (activityId, updatedCollection) => {
+  return new Promise ((resolve, reject) => {
+    axios
+     .put (`${constants.firebaseConfig.databaseURL}/myCollection/${activityId}.json`, updatedCollection)
+     .then((res) => {
+       resolve(res);
+     })
+     .catch((err) => {
+       reject(err);
+     });
+  });
+};
+
+export default {postRequest, getRequest, deleteMyCollection, putRequest}

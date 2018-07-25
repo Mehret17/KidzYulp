@@ -8,6 +8,7 @@ import './MyCollection.css';
 class MyCollection extends React.Component {
   state = {
     myCollections:[],
+
   }
 
   updateComp = () => {
@@ -38,6 +39,20 @@ class MyCollection extends React.Component {
       }));
   };
 
+  updateMyCollectionClick = (firebaseId, comment) => {
+    const myActivity = this.state.myCollections.find(x => x.id===firebaseId)
+    // console.error('myActivitiy:', myActivity)
+    myActivity.comment = comment.text
+    myCollectionRequests
+      .putRequest(firebaseId, myActivity)
+      .then(() => {
+        this.updateComp();
+      })
+      .catch((err) => {
+        console.error('error with put request', err)
+      });
+  }
+
   render () {
     const myCollectionComponent = this.state.myCollections.map((myCollection) => {
       return (
@@ -46,6 +61,7 @@ class MyCollection extends React.Component {
        key={myCollection.id} 
        details={myCollection} saved
        onClick={this.deleteMyCollectionClick}
+       onSubmit= {this.updateMyCollectionClick}
       />
       </div>
       )
