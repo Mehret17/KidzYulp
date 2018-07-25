@@ -2,18 +2,6 @@ import React from 'react';
 
 import './SingleActivity.css';
 
-// const defaultActivity = {
-//   name: '',
-//   imgUrl: '',
-//   activityUrl: '',
-//   time: '',
-//   address: '',
-//   type: '',
-//   theme: '',
-//   description: '',
-//   comment: '',
-// };
-
 class SingleActivity extends React.Component {
   state = {
     isClicked: false,
@@ -59,6 +47,13 @@ class SingleActivity extends React.Component {
             <p className="type">{details.type}</p>
             <p className="theme">{details.theme}</p>
             <p className="description">{details.description}</p>
+          
+          {
+            comment ? (
+              <p className="comment">{details.comment}</p>
+            ) : null
+          }
+          
           {
             saved ? (
                 <div className="text-center">
@@ -84,6 +79,7 @@ class SingleActivity extends React.Component {
                     onChange={this.textFieldStringState}
                   />
                   <button className="update"onClick={updatedCollection}>Submit</button>
+                  <button className="Cancel"onClick={showForm}>X</button>
                 </fieldset>
                 </div>
               ) : null 
