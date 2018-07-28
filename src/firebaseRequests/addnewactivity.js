@@ -68,4 +68,32 @@ const deleteNewActivity = (newActivityId) => {
   });
 };
 
-export default {getNewActivity, postNewActivity, getNewActivities, deleteNewActivity}
+
+const updateRecommendation = (activityId, newActivityObj) => {
+  return new Promise ((resolve, reject) => {
+    axios
+     .put (`${constants.firebaseConfig.databaseURL}/newActivities/${activityId}.json`, newActivityObj)
+     .then((res) => {
+       resolve(res);
+     })
+     .catch((err) => {
+       reject(err);
+     });
+  });
+};
+
+
+const getSingleNewActivityRequest = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/newActivities/${id}.json`)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+export default {getNewActivity, postNewActivity, getNewActivities, deleteNewActivity, updateRecommendation, getSingleNewActivityRequest}

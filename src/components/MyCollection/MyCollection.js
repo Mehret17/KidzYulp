@@ -51,19 +51,17 @@ class MyCollection extends React.Component {
       .catch((err) => {
         console.error('error with put request', err)
       });
-  }
+  };
 
   render () {
     const myCollectionComponent = this.state.myCollections.map((myCollection) => {
       return (
-      <div>
       <SingleActivity
        key={myCollection.id} 
        details={myCollection} saved
        onClick={this.deleteMyCollectionClick}
        onSubmit= {this.updateMyCollectionClick}
       />
-      </div>
       )
     })
     return (

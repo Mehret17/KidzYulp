@@ -34,20 +34,16 @@ class Activity extends React.Component {
         .catch((err) => {
           console.error('error in my collection post', err)
         })
-  }
+  };
 
   formSubmitEvent = (newActivity) => {
     newActivityRequests.postNewActivity(newActivity)
       .then(() => {
-        // newActivityRequests.getNewActivity()
-        //   .then((activities) => {
-            // this.setState({ newActivity });
-          // });
       })
       .catch((err) => {
         console.error('error with activity post', err);
       })
-  }
+  };
 
   componentDidMount() {
     activityRequests
@@ -76,14 +72,8 @@ class Activity extends React.Component {
       <div className="header">
         <h1>Activity</h1>
         <div className="mainBody">
-          {/* {this.state.isClicked ?
-            <AddNewActivity 
-            onSubmit={this.formSubmitEvent}/> :
-            ""}
-          <button
-            onClick={this.showForm}>
-            Add New Activity</button> */}
-          <button><Link to={{pathname:"/addnewactivity",onSubmit:this.formSubmitEvent}}>Add New Activity</Link></button>
+          <button>
+            <Link to={{pathname:"/addnewactivity",onSubmit:this.formSubmitEvent}}>Add New Activity</Link></button>
           {activityComponents}
         </div>
       </div>

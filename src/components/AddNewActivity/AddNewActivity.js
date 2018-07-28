@@ -1,6 +1,7 @@
 import React from 'react';
 import authRequests from '../../firebaseRequests/auth';
 
+
 import './AddNewActivity.css';
 
 const defaultActivity = {
@@ -17,9 +18,9 @@ const defaultActivity = {
 
 class AddNewActivity extends React.Component {
   state = {
-    newActivity : defaultActivity
+    newActivity : this.props.activity || defaultActivity  
   };
-
+ 
   formFieldStringState = (name, e) => {
     const tempActivity = {...this.state.newActivity};
     tempActivity[name] = e.target.value;
@@ -77,12 +78,12 @@ class AddNewActivity extends React.Component {
     ) {
       onSubmit(this.state.newActivity);
       this.setState({newActivity: defaultActivity});
-      this.props.history.push('/activity');
+      this.props.history&&this.props.history.push('/activity');
     } else {
       alert ('please fill in all the input');
 
     }
-  }
+  };
 
   render() {
     const {newActivity} = this.state;
@@ -92,9 +93,9 @@ class AddNewActivity extends React.Component {
         <h2>Add New Activity</h2>
         <form onSubmit={this.formSubmit}>
           <div className="col-md-6 col-md-offset-3">
-            <div className="row">
+            <div className="form-group">
               <fieldset>
-                <label htmlFor="Name">Name:</label>
+                <label htmlFor="name">Name:</label>
                 <input className="col-xs-12"
                   type="text"
                   id="name"

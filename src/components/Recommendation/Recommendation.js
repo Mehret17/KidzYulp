@@ -9,49 +9,55 @@ import './Recommendation.css';
 class Recommendation extends React.Component {
   state = {
     addedNewActivities: [],
+    firebaseId: '',
   };
-
-  // componentDidMount() {
-  //   this.updatedComponent();
-  // };
 
   updateComponent = () => {
     addNewActivityRequests
-    .getNewActivities(authRequests.getUid())
-    .then((addedNewActivities) => {
-      this.setState({ addedNewActivities });
-    })
-    .catch((err) => {
-      console.error('error with fis get request', err);
-    });
-  }
+      .getNewActivities(authRequests.getUid())
+      .then((addedNewActivities) => {
+        this.setState({ addedNewActivities });
+      })
+      .catch((err) => {
+        console.error('error with fis get request', err);
+      });
+  };
 
   componentDidMount = () => {
     this.updateComponent();
   };
 
-  deleteOrderClick = (firebaseId) => {
-    // const firebaseId = this.recomDetails.id;
-    // const {updatedComponent} = this.props.updatedComponent;
+  deleteActivityClick = (firebaseId) => {
     addNewActivityRequests
       .deleteNewActivity(firebaseId)
-      .then(() => { 
+      .then(() => {
         this.updateComponent();
       })
       .catch(((err) => {
         console.error('error with delete request', err)
       }));
-  }; 
+  };
+
+  updateRecommendationClick = (updatedActivity) => {
+    return addNewActivityRequests
+      .updateRecommendation(updatedActivity.id, updatedActivity)
+      .then(() => {
+        this.updateComponent();
+      })
+  };
+
   render() {
     const newActivityComponent = this.state.addedNewActivities.map((newActivity) => {
       return (
         <SingleRecommendation
           key={newActivity.id}
           recomDetails={newActivity}
-          onClick={this.deleteOrderClick}
+          onClick={this.deleteActivityClick}
+          onSubmit={this.updateRecommendationClick}
         />
       );
     });
+
     return (
       <div className="text-center">
         <h1>Recommendation</h1>
