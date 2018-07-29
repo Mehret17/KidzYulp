@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from 'react-star-rating-component';
 
 import './SingleActivity.css';
 
@@ -7,7 +8,12 @@ class SingleActivity extends React.Component {
     isClicked: false,
     comment: {
       text: '',
-    }
+    },
+    rating: 0,
+  }
+
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
   }
   
   textFieldStringState = (e) => {
@@ -17,7 +23,7 @@ class SingleActivity extends React.Component {
   };
 
   render() {
-    const {comment} = this.state;
+    const {comment, rating} = this.state;
     const {saved, details } = this.props;
     const addCollection = (e) => {
       this.props.saveActivity(this.props.details)
@@ -62,6 +68,7 @@ class SingleActivity extends React.Component {
                 </div>
               ) : (
                 <div className="text-center">
+                <StarRating name="rate" starCount={5} value={rating} onStarClick={this.onStarClick.bind(this)}/>
                 <button className="btn btn-primary"onClick={addCollection}>Save</button>
                 </div>
               )

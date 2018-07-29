@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import StarRatingComponent from 'react-star-rating-component';
+
 
 import activityRequests from '../../firebaseRequests/activity';
 import './Activity.css';
@@ -67,6 +69,7 @@ class Activity extends React.Component {
           saveActivity={this.saveActivity}
         />
       )
+      
     });
     return (
       <div className="header">
