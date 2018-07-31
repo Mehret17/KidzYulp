@@ -79,8 +79,6 @@ class SingleActivity extends React.Component {
                   </div>
                   )
               }
-             </div>
-             </div>
               {
                 this.state.isClicked ? (
                   <div className="row">
@@ -97,10 +95,11 @@ class SingleActivity extends React.Component {
                     </fieldset>
                   </div>
                 ) : null
-              }    
+              }   
+              </div> 
           </div>
        </div>
-      // </div>
+    </div>
     );
   }
 }
