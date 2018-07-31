@@ -7,6 +7,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
       <h1>KidZYulp</h1>
+      <span>
+      <button className="homeButton"></button>
+      </span>
       </div>
     );
   }
