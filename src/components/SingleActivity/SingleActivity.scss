@@ -1,3 +1,16 @@
-.SingleActivity {
-  background-color: burlywood;
+.ActivityCard {
+
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: plum;
+ 
+
+  .activityImage {
+    max-width: 100%;
+    border-radius: 10px
+  }
+  .starRating {
+    font-size: 2em;
+  }
 }
