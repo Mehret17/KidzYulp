@@ -90,15 +90,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App text-center">
         <BrowserRouter>
           <div>
             <Navbar
               authed={this.state.authed}
               signOut={this.signOut}
               />
-            <div className="container">
-              <div className="row">
+            <div className="appHome">
+              {/* <div className="row"> */}
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <PrivateRoute
@@ -134,7 +134,7 @@ class App extends Component {
                 </Switch>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </BrowserRouter>
       </div>
     );
