@@ -27,8 +27,6 @@ class MyCollection extends React.Component {
    };
 
    deleteMyCollectionClick = (firebaseId) => {
-    // const firebaseId = this.recomDetails.id;
-    // const {updatedComponent} = this.props.updatedComponent;
     myCollectionRequests
       .deleteMyCollection(firebaseId)
       .then(() => { 
@@ -41,7 +39,6 @@ class MyCollection extends React.Component {
 
   updateMyCollectionClick = (firebaseId, comment) => {
     const myActivity = this.state.myCollections.find(x => x.id===firebaseId)
-    // console.error('myActivitiy:', myActivity)
     myActivity.comment = comment.text
     myCollectionRequests
       .putRequest(firebaseId, myActivity)
