@@ -60,4 +60,16 @@ const putRequest = (activityId, updatedCollection) => {
   });
 };
 
-export default {postRequest, getRequest, deleteMyCollection, putRequest}
+const getSingleActivityRequest = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/newActivities/${id}.json`)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+export default {postRequest, getRequest, deleteMyCollection, putRequest, getSingleActivityRequest}
