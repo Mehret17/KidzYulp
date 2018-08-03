@@ -1,6 +1,6 @@
 import React from 'react';
 import singleActivityRequest from '../../firebaseRequests/mycollection';
-import {EmailShareButton} from 'react-share';
+import {EmailShareButton, EmailIcon} from 'react-share';
 
 import "./OneActivity.css";
 // import SingleActivity from '../SingleActivity/SingleActivity';
@@ -23,7 +23,7 @@ class OneActivity extends React.Component {
   render() { 
     const {myCollections} = this.state;
     const shareUrl = 'http://github.com';
-    const title = 'Test';
+    const title = 'Activity';
     return (   
     <div className="OneActivity">
       <h1>{myCollections.name}</h1>
@@ -35,8 +35,11 @@ class OneActivity extends React.Component {
     <EmailShareButton
     url={shareUrl}
     subject={title}
-    body="http://github.com"
+    body="http://localhost:3000/oneactivity/-LInCfOF4LyOoDXgU_MI"
     className="shareButton">
+    <EmailIcon
+      size={32}
+      round />
     </EmailShareButton>
     </div>
    );
