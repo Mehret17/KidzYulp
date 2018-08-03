@@ -14,7 +14,7 @@ import MyCollection from '../components/MyCollection/MyCollection';
 import Navbar from '../components/Navbar/Navbar';
 import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
-// import SingleActivity from '../components/SingleActivity/SingleActivity';
+import OneActivity from '../components/OneActivity/OneActivity';
 import fbConnection from '../firebaseRequests/connection';
 fbConnection();
 
@@ -130,6 +130,11 @@ class App extends Component {
                   path="/recommendation"
                   authed={this.state.authed}
                   component={Recommendation}
+                  />
+                    <PrivateRoute
+                  path="/oneactivity/:id"
+                  authed={this.state.authed}
+                  component={OneActivity}
                   />
                 </Switch>
               </div>

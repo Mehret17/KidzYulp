@@ -15,7 +15,6 @@ class Activity extends React.Component {
   state = {
     activities: [],
     mycollection: {},
-
   }
 
   saveActivity = (activities) => {

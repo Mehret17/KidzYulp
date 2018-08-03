@@ -1,5 +1,8 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import StarRating from "react-star-rating-component";
+import {} from "react-share";
+
 
 import "./SingleActivity.css";
 
@@ -24,7 +27,7 @@ class SingleActivity extends React.Component {
 
   render() {
     const { comment, rating } = this.state;
-    const { saved, details } = this.props;
+    const { saved, details} = this.props;
     const addCollection = e => {
       this.props.saveActivity(this.props.details);
     };
@@ -47,16 +50,21 @@ class SingleActivity extends React.Component {
           <img className="activityImage" src={details.imgUrl} alt={details.imgUrl} />
         </div>
         <div className="SingleActivity col-xs-7">
-          {/* <div className="thumbnail"> */}
-          <h3 className="name">{details.name}</h3>
+        {saved ? (<h2><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h2>) 
+            : 
+            (<h3>{details.name}</h3>)
+        }
+          {/* <h3 className="name">{details.name}</h3> */}
           <p className="time">{details.time}</p>
           <p className="address">{details.address}</p>
           <p className="type">{details.type}</p>
           <p className="theme">{details.theme}</p>
           <p className="description">{details.description}</p>
+          {/* <p className="activityUrl">{details.activityUrl}</p> */}
 
           {comment ? <p className="comment">{details.comment}</p> : null}
-
+         
+    
           {saved ? (
             <div className="text-center">
               <button className="btn btn-primary" onClick={showForm}>
@@ -100,7 +108,7 @@ class SingleActivity extends React.Component {
             </div>
           ) : null}
         </div>
-      </div>
+     </div>
     );
   }
 }
