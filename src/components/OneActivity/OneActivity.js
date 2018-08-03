@@ -1,5 +1,6 @@
 import React from 'react';
 import singleActivityRequest from '../../firebaseRequests/mycollection';
+import {EmailShareButton} from 'react-share';
 
 import "./OneActivity.css";
 // import SingleActivity from '../SingleActivity/SingleActivity';
@@ -21,6 +22,8 @@ class OneActivity extends React.Component {
   }
   render() { 
     const {myCollections} = this.state;
+    const shareUrl = 'http://github.com';
+    const title = 'Test';
     return (   
     <div className="OneActivity">
       <h1>{myCollections.name}</h1>
@@ -29,6 +32,12 @@ class OneActivity extends React.Component {
           <p className="type">{myCollections.type}</p>
           <p className="theme">{myCollections.theme}</p>
           <p className="description">{myCollections.description}</p>
+    <EmailShareButton
+    url={shareUrl}
+    subject={title}
+    body="http://github.com"
+    className="shareButton">
+    </EmailShareButton>
     </div>
    );
   }
