@@ -50,7 +50,7 @@ class SingleActivity extends React.Component {
           <img className="activityImage" src={details.imgUrl} alt={details.imgUrl} />
         </div>
         <div className="SingleActivity col-xs-7">
-        {saved ? (<h2><Link to={'/activity/' + details.id}>{details.name}</Link></h2>) 
+        {saved ? (<h2><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h2>) 
             : 
             (<h3>{details.name}</h3>)
         }

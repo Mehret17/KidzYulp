@@ -63,7 +63,7 @@ const putRequest = (activityId, updatedCollection) => {
 const getSingleActivityRequest = (id) => {
   return new Promise((resolve, reject) => {
     axios
-      .get(`${constants.firebaseConfig.databaseURL}/newActivities/${id}.json`)
+      .get(`${constants.firebaseConfig.databaseURL}/myCollection/${id}.json`)
       .then(res => {
         resolve(res.data);
       })

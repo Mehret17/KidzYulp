@@ -132,7 +132,7 @@ class App extends Component {
                   component={Recommendation}
                   />
                     <PrivateRoute
-                  path="/activity/:id"
+                  path="/oneactivity/:id"
                   authed={this.state.authed}
                   component={OneActivity}
                   />
