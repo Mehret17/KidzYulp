@@ -8,8 +8,8 @@ import './Login.css';
 class Login extends React.Component {
   state = {
     user: {
-      email: 'merutaye@gmail.com',
-      password: 'jojogigi1234',
+      email: '',
+      password: '',
     },
   };
 
@@ -43,13 +43,13 @@ class Login extends React.Component {
     return (
       <div className="Login">
       <div id="login-form">
-      <h1 className="text-center">Login</h1>
-      <form className="form-horizontal col-sm-6 col-sm-offset-3">
+      <h1 className="text-center">KidzYulp</h1>
+      <form className="form-horizontal col-sm-6 col-sm-offset-3 form-signin text-center">
             <div className="form-group">
-              <label htmlFor="inputEmail" className="col-sm-4 control-label">
-                Email:
+              <label htmlFor="inputEmail" className="col-sm-12 control-label">
+                {/* Email: */}
               </label>
-              <div className="col-sm-8">
+              <div className="col-xs-12">
                 <input
                   type="email"
                   className="form-control"
@@ -61,10 +61,10 @@ class Login extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="inputPassword" className="col-sm-4 control-label">
-                Password:
+              <label htmlFor="inputPassword" className="col-sm-12 control-label">
+                {/* Password: */}
               </label>
-              <div className="col-sm-8">
+              <div className="col-xs-12">
                 <input
                   type="password"
                   className="form-control"
@@ -84,7 +84,7 @@ class Login extends React.Component {
               <div className="col-sm-12">
                 <button
                   type="submit"
-                  className="btn btn-default col-xs-12"
+                  className="btn btn-default col-xs-12 submitButton"
                   onClick={this.loginClickEvent}
                 >
                   Login
