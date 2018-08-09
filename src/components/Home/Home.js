@@ -11,6 +11,7 @@ class Home extends React.Component {
       {/* <Redirect
         to={{ pathname: this.props.authed ? '/activity' : '/login' }}
       /> */}
+      <h1> KidzYulp </h1>
       <button className="btn btn homeButton"></button>
       </div>
     );

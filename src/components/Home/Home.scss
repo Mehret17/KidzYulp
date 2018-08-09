@@ -1,5 +1,10 @@
 .Home {
-  background: url(./images/homepage3.jpg) center,no-repeat;
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  ),
+  url(./images/homepage3.jpg) center,no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,7 +13,22 @@
   width: 100%;
   margin-top: -20px; 
   overflow: hidden; // color: white;
+  // opacity: 0.2;
 }
+
+div h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  font-size: 10rem;
+  transform: translate(-50%, -50%);
+}
+// }
 
 .homeButton {
   color: powderblue;
