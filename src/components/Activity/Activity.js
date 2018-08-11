@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Slide} from 'react-slideshow-image';
+
 // import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -15,6 +17,7 @@ class Activity extends React.Component {
   state = {
     activities: [],
     mycollection: {},
+    images: [],
   }
 
   saveActivity = (activities) => {
@@ -37,6 +40,12 @@ class Activity extends React.Component {
         console.error('error in my collection post', err)
       })
   };
+
+  images = [
+    'https://images.unsplash.com/photo-1471914036897-d8255336ca8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8884129eda16111f64139706300a8cc7&auto=format&fit=crop&w=1000&q=60',
+    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d54cdce222b083c93c0f6165307ae626&auto=format&fit=crop&w=1000&q=60',
+    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d54cdce222b083c93c0f6165307ae626&auto=format&fit=crop&w=1000&q=60'
+  ]
 
   formSubmitEvent = (newActivity) => {
     newActivityRequests.postNewActivity(newActivity)
@@ -76,11 +85,20 @@ class Activity extends React.Component {
       )
     });
     return (
-      <div className="header">
-        <h1>Activity</h1>
-        <div className="mainBody">
-          <button>
+      <div className="Activity header">
+        <div className="pictureHolder">
+        <Slide
+           images = {this.images}
+           duration = {5000}
+           transitionDuration={1000}
+         />
+         </div>
+        <div className="imageHolder">
+        </div>
+        <div className="mainBody text-center">
+          <button className="addNewActivityBtn">
             <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}>Add New Activity</Link></button>
+            <br/>
           {activityComponents}
         </div>
       </div>

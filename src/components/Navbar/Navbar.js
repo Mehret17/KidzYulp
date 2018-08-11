@@ -30,15 +30,16 @@ class Navbar extends React.Component {
               {
                 authed ? (
                   <ul className="nav navbar-nav navbar-right">
-                    <li>
+                    {/* <li>
                       <Link to="/activity">Activity</Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link to="/mycollection">My Collection</Link>
                     </li>
                     <li>
                       <Link to="/recommendation">Recommendation</Link>
                     </li>
+                    
                     <li className="navbar-form">
                     <button
                     onClick={logoutClickEvent}
@@ -50,9 +51,9 @@ class Navbar extends React.Component {
                   </ul>
                 ) : (
                     <ul className="nav navbar-nav navbar-right">
-                      <li>
+                      {/* <li>
                         <Link to="/activity">Activity</Link>
-                      </li>
+                      </li> */}
                       <li>
                         <Link to="/login">Login</Link>
                       </li>
