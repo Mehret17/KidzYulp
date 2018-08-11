@@ -45,22 +45,22 @@ class SingleActivity extends React.Component {
     };
 
     return (
-      <div className="ActivityCard col-xs-12 col-sm-10 col-sm-offset-1">
-        <div className="col-xs-4 activityCard">
+      <div className="ActivityCard col-xs-4 col-xs-3">
+        <div className="activityCard">
           <img className="activityImage" src={details.imgUrl} alt={details.imgUrl} />
         </div>
-        <div className="SingleActivity col-xs-7">
-        {saved ? (<h2><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h2>) 
-            : 
-            (<h3>{details.name}</h3>)
+        <div className="SingleActivity">
+        {
+          saved ? (<h3><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h3>) 
+          :
+        (<h3><Link to={'/activitylineitem/' + details.id}>{details.name}</Link></h3> )
         }
-          {/* <h3 className="name">{details.name}</h3> */}
           <p className="time">{details.time}</p>
           <p className="address">{details.address}</p>
           <p className="type">{details.type}</p>
           <p className="theme">{details.theme}</p>
-          <p className="description">{details.description}</p>
-          {/* <p className="activityUrl">{details.activityUrl}</p> */}
+          {/* <p className="description">{details.description}</p> */}
+          <a className="activityUrl">{details.activityUrl}</a>
 
           {comment ? <p className="comment">{details.comment}</p> : null}
          
@@ -82,8 +82,8 @@ class SingleActivity extends React.Component {
                 value={rating}
                 onStarClick={this.onStarClick.bind(this)}
               />
-              <button className="btn btn-primary" onClick={addCollection}>
-                Save
+              <button className="btn btn-default glyphicon glyphicon-bookmark" onClick={addCollection}>
+          
               </button>
             </div>
           )}
