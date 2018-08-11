@@ -1,14 +1,21 @@
-# KidZyulp
+# NSS Capstone: "KidzYulp"
 
-## Description
-Portfolio of MK which includes summary of professional History, projects done, and weekly blog during my stay at NSS
+Specification: - 
+Create a Browser Rich Application that utilizes the following:
+	1. React
+	2. Firebase Authentication
+	3. Culmination of technologies mastered in last 6 months
+	• HTML5
+	• CSS
+	• JavaScript
 
-## Screenshot
-![Webpage](https://raw.githubusercontent.com/Mehret17/Mehret17.github.io/master/screenshot/Capture.PNG)
-## How to Run
- 1. Clone down this repo, and cd into project
- 1. Install http-server plugin via npm
- 1. In your terminal  ``` hs -p 9999```
- 1. In your browser navigate to: localhost:9999
+Technologies Used:
+	1. HTML5, CSS, JavaScript
+	2. Animate CSS: Simple animations
+	3. SASS 0.5.0: All customized styli
+	4. Firebase 2.4.2: Authentication, storage for activities data
+	5. MomentJS.
+  6. 
+
 ## Contributors
 [Mehret Kulala](https://github.com/Mehret17)
