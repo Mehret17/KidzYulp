@@ -14,6 +14,7 @@ import MyCollection from '../components/MyCollection/MyCollection';
 import Navbar from '../components/Navbar/Navbar';
 import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
+import ActivityLineItem from '../components/ActivityLineItem/ActivityLineItem';
 import OneActivity from '../components/OneActivity/OneActivity';
 import fbConnection from '../firebaseRequests/connection';
 fbConnection();
@@ -90,7 +91,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App text-center">
+      <div className="App">
         <BrowserRouter>
           <div>
             <Navbar
@@ -130,6 +131,11 @@ class App extends Component {
                   path="/recommendation"
                   authed={this.state.authed}
                   component={Recommendation}
+                  />
+                  <PrivateRoute
+                  path="/activitylineitem/:id"
+                  authed={this.state.authed}
+                  component={ActivityLineItem}
                   />
                     <PrivateRoute
                   path="/oneactivity/:id"

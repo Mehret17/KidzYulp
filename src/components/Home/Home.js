@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Home.css';
 
@@ -11,7 +11,9 @@ class Home extends React.Component {
       {/* <Redirect
         to={{ pathname: this.props.authed ? '/activity' : '/login' }}
       /> */}
-      <button className="btn btn homeButton"></button>
+      <h1> KidzYulp </h1>
+      <button className="btn btn-default btn-lg">
+       <Link to={{pathname: this.props.authed ? "/activity" :"/login"}}>Explore</Link></button>
       </div>
     );
   }

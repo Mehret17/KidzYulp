@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Slide} from 'react-slideshow-image';
+
 // import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -15,6 +17,7 @@ class Activity extends React.Component {
   state = {
     activities: [],
     mycollection: {},
+    images: [],
   }
 
   saveActivity = (activities) => {
@@ -37,6 +40,13 @@ class Activity extends React.Component {
         console.error('error in my collection post', err)
       })
   };
+
+  
+
+  images = [
+    require('../../images/legoyellow.jpg'),
+    require('../../images/kidsplayingballC.jpg'),
+  ];
 
   formSubmitEvent = (newActivity) => {
     newActivityRequests.postNewActivity(newActivity)
@@ -61,9 +71,7 @@ class Activity extends React.Component {
       });
   }
 
-  // onChange = (e) => {
-  //   this.setState({search: e.target.value });
-  // };
+
 
   render() {
     const activityComponents = this.state.activities.map((activity) => {
@@ -76,11 +84,18 @@ class Activity extends React.Component {
       )
     });
     return (
-      <div className="header">
-        <h1>Activity</h1>
+      <div className="Activity header">
+        <div className="pictureHolder">
+        <Slide
+           images = {this.images}
+           duration = {5000}
+           transitionDuration={1000}
+         />
+         </div>
         <div className="mainBody">
-          <button>
-            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}>Add New Activity</Link></button>
+          <div className="addNewActivityBtn">
+            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div>
+            <br/>
           {activityComponents}
         </div>
       </div>

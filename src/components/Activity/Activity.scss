@@ -1,3 +1,43 @@
+
+// .Activity {
+//   background: url(../../images/legoyellow.jpg) center,no-repeat;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   min-height: 100vh;
+//   width: 100%;
+//   margin-top: -20px; 
+//   overflow: hidden; // color: white;
+//   // opacity: 0.2;
+// }
+
 .Activity {
-  background-color: blueviolet;
+  padding: 0;
+  margin-top: -2rem;
 }
+
+.react-slideshow-wrapper.slide {
+  height: 36vw;
+  max-height: 500px;
+}
+
+.react-slideshow-wrapper .images-wrap div img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.react-slideshow-container .nav:last-of-type {
+  display: none;
+}
+
+.react-slideshow-container .nav:first-of-type {
+  display: none;
+}
+
+// img {
+//   width: 100%;
+//   height: 100%;
+  
+// }

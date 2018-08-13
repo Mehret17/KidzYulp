@@ -45,22 +45,22 @@ class SingleActivity extends React.Component {
     };
 
     return (
-      <div className="ActivityCard col-xs-12 col-sm-10 col-sm-offset-1">
-        <div className="col-xs-4 activityCard">
+      <div className="ActivityCard">
+        <div className="col-xs-6 col-md-3">
+          <div className="thumbnail">
           <img className="activityImage" src={details.imgUrl} alt={details.imgUrl} />
-        </div>
-        <div className="SingleActivity col-xs-7">
-        {saved ? (<h2><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h2>) 
-            : 
-            (<h3>{details.name}</h3>)
+        <div className="SingleActivity">
+        {
+          saved ? (<p><Link className="title" to={'/oneactivity/' + details.id}>{details.name}</Link></p>) 
+          :
+        (<p><Link className="title" to={'/activitylineitem/' + details.id}>{details.name}</Link></p> )
         }
-          {/* <h3 className="name">{details.name}</h3> */}
           <p className="time">{details.time}</p>
           <p className="address">{details.address}</p>
           <p className="type">{details.type}</p>
           <p className="theme">{details.theme}</p>
-          <p className="description">{details.description}</p>
-          {/* <p className="activityUrl">{details.activityUrl}</p> */}
+          {/* <p className="description">{details.description}</p> */}
+          <a className="activityUrl">{details.activityUrl}</a>
 
           {comment ? <p className="comment">{details.comment}</p> : null}
          
@@ -75,15 +75,15 @@ class SingleActivity extends React.Component {
               </button>
             </div>
           ) : (
-            <div className="text-center starRating">
+            <div className="starRating">
               <StarRating
                 name="rate"
                 starCount={5}
                 value={rating}
                 onStarClick={this.onStarClick.bind(this)}
               />
-              <button className="btn btn-primary" onClick={addCollection}>
-                Save
+              <button className="btn btn-default btn-sm glyphicon glyphicon-bookmark pull-right" onClick={addCollection}>
+          
               </button>
             </div>
           )}
@@ -107,6 +107,8 @@ class SingleActivity extends React.Component {
               </fieldset>
             </div>
           ) : null}
+          </div>
+        </div>
         </div>
      </div>
     );

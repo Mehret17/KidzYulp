@@ -1,16 +1,52 @@
+body {
+  font-size: 12px;
+}
+
 .ActivityCard {
 
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
-  background-color: plum;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  // display: flex;
  
 
   .activityImage {
-    max-width: 100%;
-    border-radius: 10px
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid #e6e6e6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
   .starRating {
-    font-size: 2em;
+    font-size: 1.5em;
   }
+
+  .title {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 1.3125em;
+
+  }
+
+  .address {
+    max-width: 100%;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+  }
+
+  .pull-right {
+    float: right;
+    background-origin: none;
+  }
+ 
 }
+
+// .thumbnail {
+//   height: 100px;
+// }
