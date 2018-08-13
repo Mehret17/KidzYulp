@@ -41,11 +41,12 @@ class Activity extends React.Component {
       })
   };
 
+  
+
   images = [
-    'https://images.unsplash.com/photo-1471914036897-d8255336ca8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8884129eda16111f64139706300a8cc7&auto=format&fit=crop&w=1000&q=60',
-    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d54cdce222b083c93c0f6165307ae626&auto=format&fit=crop&w=1000&q=60',
-    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d54cdce222b083c93c0f6165307ae626&auto=format&fit=crop&w=1000&q=60'
-  ]
+    require('../../images/legoyellow.jpg'),
+    require('../../images/kidsplayingballC.jpg'),
+  ];
 
   formSubmitEvent = (newActivity) => {
     newActivityRequests.postNewActivity(newActivity)
@@ -70,9 +71,7 @@ class Activity extends React.Component {
       });
   }
 
-  // onChange = (e) => {
-  //   this.setState({search: e.target.value });
-  // };
+
 
   render() {
     const activityComponents = this.state.activities.map((activity) => {
@@ -93,11 +92,9 @@ class Activity extends React.Component {
            transitionDuration={1000}
          />
          </div>
-        <div className="imageHolder">
-        </div>
-        <div className="mainBody text-center">
-          <button className="addNewActivityBtn">
-            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}>Add New Activity</Link></button>
+        <div className="mainBody">
+          <div className="addNewActivityBtn">
+            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div>
             <br/>
           {activityComponents}
         </div>

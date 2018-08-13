@@ -45,15 +45,15 @@ class SingleActivity extends React.Component {
     };
 
     return (
-      <div className="ActivityCard col-xs-4 col-xs-3">
-        <div className="activityCard">
+      <div className="ActivityCard">
+        <div className="col-xs-6 col-md-3">
+          <div className="thumbnail">
           <img className="activityImage" src={details.imgUrl} alt={details.imgUrl} />
-        </div>
         <div className="SingleActivity">
         {
-          saved ? (<h3><Link to={'/oneactivity/' + details.id}>{details.name}</Link></h3>) 
+          saved ? (<p><Link className="title" to={'/oneactivity/' + details.id}>{details.name}</Link></p>) 
           :
-        (<h3><Link to={'/activitylineitem/' + details.id}>{details.name}</Link></h3> )
+        (<p><Link className="title" to={'/activitylineitem/' + details.id}>{details.name}</Link></p> )
         }
           <p className="time">{details.time}</p>
           <p className="address">{details.address}</p>
@@ -75,14 +75,14 @@ class SingleActivity extends React.Component {
               </button>
             </div>
           ) : (
-            <div className="text-center starRating">
+            <div className="starRating">
               <StarRating
                 name="rate"
                 starCount={5}
                 value={rating}
                 onStarClick={this.onStarClick.bind(this)}
               />
-              <button className="btn btn-default glyphicon glyphicon-bookmark" onClick={addCollection}>
+              <button className="btn btn-default btn-sm glyphicon glyphicon-bookmark pull-right" onClick={addCollection}>
           
               </button>
             </div>
@@ -107,6 +107,8 @@ class SingleActivity extends React.Component {
               </fieldset>
             </div>
           ) : null}
+          </div>
+        </div>
         </div>
      </div>
     );
