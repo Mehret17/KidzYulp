@@ -15,10 +15,13 @@ class SingleActivity extends React.Component {
     rating: 0
   };
 
+  
   onStarClick(nextValue, prevValue, name) {
     this.setState({ rating: nextValue });
   }
-
+  ratingChanged = (newRating) => {
+    console.log(newRating)
+  }
   textFieldStringState = e => {
     const tempActivity = { ...this.state.comment };
     tempActivity.text = e.target.value;
@@ -28,6 +31,8 @@ class SingleActivity extends React.Component {
   render() {
     const { comment, rating } = this.state;
     const { saved, details} = this.props;
+    // const {to } = this.props;
+    const url = (`${details.activityUrl}`);
     const addCollection = e => {
       this.props.saveActivity(this.props.details);
     };
@@ -60,8 +65,10 @@ class SingleActivity extends React.Component {
           <p className="type">{details.type}</p>
           <p className="theme">{details.theme}</p>
           {/* <p className="description">{details.description}</p> */}
-          <a className="activityUrl">{details.activityUrl}</a>
+          
+          {/* <a>=>{details.activityUrl}</a> */}
 
+          <a href={url} >{url}</a>
           {comment ? <p className="comment">{details.comment}</p> : null}
          
     
@@ -75,16 +82,20 @@ class SingleActivity extends React.Component {
               </button>
             </div>
           ) : (
+            <div className="activityFooter">
             <div className="starRating">
               <StarRating
                 name="rate"
                 starCount={5}
                 value={rating}
                 onStarClick={this.onStarClick.bind(this)}
+                onChange={this.ratingChanged}
+                // renderStarIcon={() => <span></span> }
               />
               <button className="btn btn-default btn-sm glyphicon glyphicon-bookmark pull-right" onClick={addCollection}>
           
               </button>
+            </div>
             </div>
           )}
           {this.state.isClicked ? (

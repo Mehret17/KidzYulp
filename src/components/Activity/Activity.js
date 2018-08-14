@@ -44,8 +44,8 @@ class Activity extends React.Component {
   
 
   images = [
-    require('../../images/legoyellow.jpg'),
-    require('../../images/kidsplayingballC.jpg'),
+    require('../../images/trial.jpg'),
+    require('../../images/boy.jpg'),
   ];
 
   formSubmitEvent = (newActivity) => {

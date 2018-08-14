@@ -16,6 +16,7 @@ body {
     border-bottom: 1px solid #e6e6e6;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    margin-bottom: 6px;
   }
   .starRating {
     font-size: 1.5em;
@@ -27,8 +28,10 @@ body {
     overflow-wrap: break-word !important;
     font-weight: bold;
     margin-bottom: 6px;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1.3125em;
+    position: relative;
+    height: 2.625em;
 
   }
 
@@ -45,6 +48,10 @@ body {
     background-origin: none;
   }
  
+  .activityFooter {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 5px;
+  }
 }
 
 // .thumbnail {
