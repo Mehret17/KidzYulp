@@ -1,3 +1,36 @@
-.Navbar {
-  background-color: Red;
+@import url('https://fonts.googleapis.com/css?family=Share');
+
+.navbar-default {
+  min-height: 0;
+  background-color: transparent;
+}
+
+
+
+.navbar-brand {
+font-size: 20px;
+line-height: 1.4;
+font-weight: 1000;
+font-family: 'Share', cursive;
+color: #68156f !important;
+margin-left: 0px
+}
+
+.navbar-right {
+  text-transform: uppercase;
+  border: none;
+  // border-left: 1px solid #EFF2F5;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 10px;
+  color: #45494E;
+  
+}
+
+.navbar-nav>li>a {
+  color: #45494E;
+}
+
+.navbar-nav>li {
+  border-left: 1px solid #EFF2F5;
 }

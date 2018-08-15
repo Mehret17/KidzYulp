@@ -14,7 +14,8 @@
   min-height: 100vh;
   width: 100%;
   margin-top: -20px; 
-  overflow: hidden; // color: white;
+  overflow: hidden;
+  position: absolute; // color: white;
   // opacity: 0.2;
 }
 
@@ -34,9 +35,12 @@ div h1 {
 // }
 
 .btn-lg {
-  color: purple;
   margin: 0;
   position: absolute;
   top: 88%;
   left: 45%;
+}
+
+a {
+  color: #68156f !important;
 }
