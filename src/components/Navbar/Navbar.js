@@ -1,12 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+import newActivityRequests from '../../firebaseRequests/addnewactivity';
 import authRequests from "../../firebaseRequests/auth";
 
 import "./NavBar.css";
 
 class NavBar extends React.Component {
+
+  formSubmitEvent = (newActivity) => {
+    newActivityRequests.postNewActivity(newActivity)
+      .then(() => {
+      })
+      .catch((err) => {
+        console.error('error with activity post', err);
+      })
+  };
+
   render() {
     const { authed, signOut } = this.props;
     const logoutClickEvent = () => {
@@ -52,7 +62,7 @@ class NavBar extends React.Component {
                     <Link to="/recommendation">Recommendation</Link>
                   </li>
                   <li>
-                    <Link to="/addnewactivity">Create Activity</Link>
+                  <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}>Create Event</Link>
                   </li>
 
                   <li className="navbar-form">

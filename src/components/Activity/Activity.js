@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {Slide} from 'react-slideshow-image';
 
 // import StarRatingComponent from 'react-star-rating-component';
@@ -96,8 +96,8 @@ class Activity extends React.Component {
            {/* <h1> Find Activities Near You</h1> */}
          </div>
         <div className="mainBody">
-          <div className="addNewActivityBtn">
-            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div>
+          {/* <div className="addNewActivityBtn"> */}
+            {/* <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div> */}
             <br/>
           {activityComponents}
         </div>

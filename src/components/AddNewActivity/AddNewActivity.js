@@ -1,70 +1,75 @@
-import React from 'react';
-import authRequests from '../../firebaseRequests/auth';
+import React from "react";
+import {
+  Form,
+  ControlLabel,
+  Col,
+  FormGroup,
+  FormControl,
+  Button
+} from "react-bootstrap";
+import authRequests from "../../firebaseRequests/auth";
 
-
-import './AddNewActivity.css';
+import "./AddNewActivity.css";
 
 const defaultActivity = {
-  name: '',
-  imgUrl: '',
-  activityUrl: '',
-  time: '',
-  address: '',
-  type: '',
-  theme: '',
-  description: '',
+  name: "",
+  imgUrl: "",
+  activityUrl: "",
+  time: "",
+  address: "",
+  type: "",
+  theme: "",
+  description: ""
 };
-
 
 class AddNewActivity extends React.Component {
   state = {
-    newActivity : this.props.activity || defaultActivity  
+    newActivity: this.props.activity || defaultActivity
   };
- 
+
   formFieldStringState = (name, e) => {
-    const tempActivity = {...this.state.newActivity};
+    const tempActivity = { ...this.state.newActivity };
     tempActivity[name] = e.target.value;
-    this.setState({newActivity: tempActivity});
+    this.setState({ newActivity: tempActivity });
   };
 
-  nameChange = (e) => {
-    this.formFieldStringState('name', e);
+  nameChange = e => {
+    this.formFieldStringState("name", e);
   };
 
-  imageChange = (e) => {
-    this.formFieldStringState('imgUrl', e);
+  imageChange = e => {
+    this.formFieldStringState("imgUrl", e);
   };
 
-  activityChange = (e) => {
-    this.formFieldStringState('activityUrl', e);
+  activityChange = e => {
+    this.formFieldStringState("activityUrl", e);
   };
 
-  timeChange = (e) => {
-    this.formFieldStringState('time', e);
+  timeChange = e => {
+    this.formFieldStringState("time", e);
   };
 
-  addressChange = (e) => {
-    this.formFieldStringState('address', e);
+  addressChange = e => {
+    this.formFieldStringState("address", e);
   };
 
-  typeChange = (e) => {
-    this.formFieldStringState('type', e);
+  typeChange = e => {
+    this.formFieldStringState("type", e);
   };
 
-  themeChange = (e) => {
-    this.formFieldStringState('theme', e);
+  themeChange = e => {
+    this.formFieldStringState("theme", e);
   };
 
-  descriptionChange = (e) => {
-    this.formFieldStringState('description', e);
+  descriptionChange = e => {
+    this.formFieldStringState("description", e);
   };
 
-  
-  formSubmit = (e) => {
-    const {onSubmit} = this.props.location;
-    const {newActivity} = this.state;
+  formSubmit = e => {
+    const { onSubmit } = this.props.location;
+    const { newActivity } = this.state;
     newActivity.uid = authRequests.getUid();
-    this.setState({newActivity});
+    this.setState({ newActivity });
     e.preventDefault();
     if (
       newActivity.name &&
@@ -77,125 +82,146 @@ class AddNewActivity extends React.Component {
       newActivity.description
     ) {
       onSubmit(this.state.newActivity);
-      this.setState({newActivity: defaultActivity});
-      this.props.history&&this.props.history.push('/activity');
+      this.setState({ newActivity: defaultActivity });
+      this.props.history && this.props.history.push("/activity");
     } else {
-      alert ('please fill in all the input');
-
+      alert("please fill in all the input");
     }
   };
 
   render() {
-    const {newActivity} = this.state;
+    const { newActivity } = this.state;
 
     return (
-      <div className="AddNewActivity">
-        <h2>Add New Activity</h2>
-        <form onSubmit={this.formSubmit}>
-          <div className="col-md-6 col-md-offset-3">
-            <div className="form-group">
-              <fieldset>
-                <label htmlFor="name">Name:</label>
-                <input className="col-xs-12"
+    // <div>
+    // <form onSubmit={this.formSubmit}>
+      <div className="AddNewActivity text-center">
+        {/* <form onSubmit={this.formSubmit}> */}
+          <Form horizontal onSubmit={this.formSubmit} className="col-md-6 col-md-offset-3">
+          {/* <form onSubmit={this.formSubmit}> */}
+            <FormGroup controlId="name">
+              <Col componentClass={ControlLabel} sm={2}>
+                Name
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="name"
+                  // id="name"
                   placeholder="Activity Name"
                   value={newActivity.name}
                   onChange={this.nameChange}
                 />
-              </fieldset>
-              </div>
-              <div className="row">
-              <fieldset className="form">
-                <label htmlFor="Name">Image URL:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="imgUrl">
+              <Col componentClass={ControlLabel} sm={2}>
+                Image Url
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="image"
+                  // id="image"
                   placeholder="www.addnewactivity.png"
                   value={newActivity.image}
                   onChange={this.imageChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset className="form">
-                <label htmlFor="Name">Activity URL:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="activityUrl">
+              <Col componentClass={ControlLabel} sm={2}>
+                Activity Url
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="activity"
+                  // id="activity"
                   placeholder="www.addnewactivity.com"
                   value={newActivity.activity}
                   onChange={this.activityChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset>
-                <label htmlFor="time">Time:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="time">
+              <Col componentClass={ControlLabel} sm={2}>
+                Time
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="time"
+                  // id="time"
                   placeholder="3:00 PM - 5:00 PM"
                   value={newActivity.time}
                   onChange={this.timeChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset>
-                <label htmlFor="time">Address:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="address">
+              <Col componentClass={ControlLabel} sm={2}>
+                Where
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
                   id="address"
                   placeholder="500 Interstate Blvd"
                   value={newActivity.address}
                   onChange={this.addressChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset>
-                <label htmlFor="type">Type:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="type">
+              <Col componentClass={ControlLabel} sm={2}>
+                Type
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="type"
+                  // id="type"
                   placeholder="Play Date"
                   value={newActivity.type}
                   onChange={this.typeChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset>
-                <label htmlFor="theme">Theme:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="theme">
+              <Col componentClass={ControlLabel} sm={2}>
+                Theme
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="theme"
-                  placeholder="500 Interstate Blvd"
+                  // id="theme"
+                  placeholder="Art"
                   value={newActivity.theme}
                   onChange={this.themeChange}
                 />
-              </fieldset>
-            </div>
-            <div className="row">
-              <fieldset>
-                <label htmlFor="time">Description:</label>
-                <input className="col-xs-12"
+              </Col>
+            </FormGroup>
+            <FormGroup controlId="description">
+              <Col componentClass={ControlLabel} sm={2}>
+              <ControlLabel>Textarea</ControlLabel>
+                Description
+              </Col>
+              <Col sm={6}>
+                <FormControl
                   type="text"
-                  id="description"
+                  // id="description"
                   placeholder="Fun"
                   value={newActivity.description}
                   onChange={this.descriptionChange}
                 />
-              </fieldset>
-            </div>
-            <br />
-            <button className="btn btn-primary col-xs-6">Submit</button>
-          </div>
-          </form>
-          </div>
-        );
-      }
-    }
-    
-    export default AddNewActivity;
+              </Col>
+            </FormGroup>
+
+            <FormGroup>
+            <Col smOffset={2} sm={10}>
+            <Button type="submit">Submit</Button>
+            </Col>
+            </FormGroup>
+        </Form>
+      </div>
+    );
+  }
+}
+
+export default AddNewActivity;
