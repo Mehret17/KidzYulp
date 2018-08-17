@@ -17,7 +17,7 @@ class NavBar extends React.Component {
     return (
 
       <div>
-        <nav className="navbar">
+        <nav className="navbar navbar-fixed-top">
           <div className="container-fluid">
             <div className="navbar-header">
               <button

@@ -63,7 +63,7 @@ class MyCollection extends React.Component {
     })
     return (
       <div className="MyCollection">
-      <h1>MyCollection</h1>
+      {/* <h1>MyCollection</h1> */}
       {myCollectionComponent}
       </div>
     );

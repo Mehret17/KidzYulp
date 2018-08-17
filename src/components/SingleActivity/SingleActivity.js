@@ -74,7 +74,7 @@ class SingleActivity extends React.Component {
     
           {saved ? (
             <div className="myCollectionFooter">
-              <button className="btn btn-default btn-sm glyphicon glyphicon-pencil" onClick={showForm}>
+              <button className="btn btn-default btn-sm glyphicon glyphicon-comment" onClick={showForm}>
               </button>
               <button className="btn btn-danger btn-sm glyphicon glyphicon-trash pull-right" onClick={deleteCollection}>
               </button>
@@ -100,19 +100,16 @@ class SingleActivity extends React.Component {
             <div className="row">
               <fieldset>
                 <textarea
-                  className="col-xs-12"
+                  className="text-field"
                   type="text"
                   id="name"
                   placeholder="Note"
                   value={comment.text}
                   onChange={this.textFieldStringState}
                 />
-                <button className="update" onClick={updatedCollection}>
-                  Submit
+                <button className="update glyphicon glyphicon-ok" onClick={updatedCollection}>
                 </button>
-                <button className="Cancel" onClick={showForm}>
-                  X
-                </button>
+                <button className="remove glyphicon glyphicon-remove pull-right" onClick={showForm}></button>
               </fieldset>
             </div>
           ) : null}

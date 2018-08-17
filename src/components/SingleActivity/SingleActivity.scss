@@ -60,6 +60,29 @@ body {
   padding-top: 5px;
 }
 
+textarea {
+  border: 1px solid #68156f;
+	border-radius: 10px;
+	height: 60px;
+  width: 260px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 0;
+}
+
+// fieldset {
+//   position: relative;
+
+fieldset>button.update{
+    left: 11px;
+    color: blue;
+    // border-radius: 35px;
+}
+fieldset>button.remove{
+  right: 11px;
+  color: red;
+  // border-radius: 35px;
+}
 // .thumbnail {
 //   height: 100px;
 // }
