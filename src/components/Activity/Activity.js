@@ -45,7 +45,7 @@ class Activity extends React.Component {
 
   images = [
     require('../../images/girl.png'),
-    require('../../images/cuteboy.png'),
+    require('../../images/funkids.jpg'),
     require('../../images/anotherpic.jpg')
   ];
 

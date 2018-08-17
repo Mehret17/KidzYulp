@@ -27,12 +27,12 @@ font-family: 'Gloria Hallelujah', cursive;
   padding-left: 20px;
   padding-right: 20px;
   font-size: 10px;
-  color: #45494E;
+  color:  #68156f;
   
 }
 
 .navbar-nav>li>a {
-  color: #45494E;
+  color:  #68156f;
 }
 
 .navbar-nav>li {
@@ -50,4 +50,10 @@ font-family: 'Gloria Hallelujah', cursive;
   border-left: 1px solid #EFF2F5;
   line-height: 20px;
 }
+
+.nav>li>a:hover {
+  background-color:  #68156f;
+  color: white;
+}
+
 
