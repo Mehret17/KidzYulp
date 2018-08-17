@@ -58,7 +58,7 @@ class NavBar extends React.Component {
                   <li className="navbar-form">
                     <button
                       onClick={logoutClickEvent}
-                      className="btn btn-default"
+                      className="btn btn-default logout"
                     >
                       Logout
                     </button>
