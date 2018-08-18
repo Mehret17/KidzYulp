@@ -3,11 +3,17 @@ import singleActivityRequest from '../../firebaseRequests/mycollection';
 import {EmailShareButton, EmailIcon} from 'react-share';
 
 import "./OneActivity.css";
+// import mycollection from '../../firebaseRequests/mycollection';
 // import SingleActivity from '../SingleActivity/SingleActivity';
 
 class OneActivity extends React.Component {
   state ={
-    myCollections :[]
+    myCollections :[],
+    Time: 'Time',
+    Address: 'Address',
+    ActivityType: 'ActivityType',
+    Theme: 'Theme',
+    What:'What'
     }
   componentDidMount () {
     const firebaseId = this.props.match.params.id;
@@ -21,21 +27,26 @@ class OneActivity extends React.Component {
       })
   }
   render() { 
-    const {myCollections} = this.state;
+    const {myCollections, Time, Address, ActivityType, Theme, What} = this.state;
+    const url = (`${myCollections.activityUrl}`);
     const shareUrl = 'http://github.com';
     const title = 'Activity';
     return (   
-    <div className="OneActivity">
-      <h1>{myCollections.name}</h1>
-      <p className="time">{myCollections.time}</p>
-          <p className="address">{myCollections.address}</p>
-          <p className="type">{myCollections.type}</p>
-          <p className="theme">{myCollections.theme}</p>
-          <p className="description">{myCollections.description}</p>
+    <div className="OneActivity col-md-6 col-md-offset-3">
+     <img className="oneActivityImage" src={myCollections.imgUrl} alt={myCollections.imgUrl} />
+      <h1 className="oneActivityName">{myCollections.name}</h1>
+      <div className="oneActivityDescription">
+      <p className="time"><span className="tags">{Time}</span> - {myCollections.time}</p>
+          <p className="address"><span className="tags">{Address}</span> - {myCollections.address}</p>
+          <p className="type"> <span className="tags">{ActivityType}</span> - {myCollections.type}</p>
+          <p className="theme"><span className="tags">{Theme}</span> - {myCollections.theme}</p>
+          <p className="description"><span className="tags">{What}</span> - {myCollections.description}</p>
+          <a href={url} >{url}</a>
+      </div>
     <EmailShareButton
     url={shareUrl}
     subject={title}
-    body="http://localhost:3000/oneactivity/-LInCfOF4LyOoDXgU_MI"
+    body="http://localhost:3000/activitylineitem/id"
     className="shareButton">
     <EmailIcon
       size={32}
