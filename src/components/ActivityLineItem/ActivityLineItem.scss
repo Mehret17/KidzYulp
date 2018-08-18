@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+.ActivityLineItem {
+  margin-top: 70px;
+}
+
+.activityName {
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #68156f;
+  text-transform: uppercase;
+}
+
+.lineItemDescription {
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.lineItemImage {
+  width: 100%;
+}
+
+.description {
+  text-align: justify;
+}
+
+.tag {
+  font-weight: bold;
+  color: #68156f;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-size: 15px
+
+}

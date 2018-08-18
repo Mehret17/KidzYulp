@@ -7,13 +7,8 @@ class Home extends React.Component {
   render () {
     return (
       <div className="Home">
-      {/* <h1>KidZYulp</h1> */}
-      {/* <Redirect
-        to={{ pathname: this.props.authed ? '/activity' : '/login' }}
-      /> */}
-      <h1> KidzYulp </h1>
+      <h1 className="appName"> KidzYulp </h1>
       <button className="btn btn-default btn-lg exploreButton">
-       {/* <Link to={{pathname: this.props.authed ? "/activity" :"/login"}}>Explore</Link></button> */}
        <Link to={{pathname: this.props.authed ? "/activity" :"/login"}}>Explore</Link></button>
       </div>
     );

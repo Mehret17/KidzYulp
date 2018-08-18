@@ -5,9 +5,9 @@
       "imgUrl":
         "https://www.gsvymca.org/sites/gsvymca.org/files/8d48a76478bd3ab17d_d2m6bne4n.jpg",
       "activityUrl": "http://www.ymcamidtn.org/summer",
-      "time": "7:00 AM – 6:00 PM",
+      "time": "7:00am – 6:00pm",
       "address": "YMCA branch's",
-      "type": "summer camp",
+      "type": "Summer camp",
       "theme": "Sports",
       "description":
         "YMCA Sports Camps provide campers with the opportunity to learn sport-specific skills, which will help them enjoy each sport through fun and exciting drills and games. All skill levels are welcomed and encouraged. Choose from basketball, flag football or soccer camp. This half-day camp can be paired with YMCA Day Camp for a full day of fun! YMCA Sports Camps are offered at the Brentwood, Donelson-Hermitage, North Rutherford (Smyrna), Northwest and Robertson County (Springfield) Ys."
@@ -17,9 +17,9 @@
       "imgUrl":
         "http://www.franklinis.com/wp-content/uploads/2013/03/IMG_6600.jpg",
       "activityUrl": "https://barefootrepublic.org/",
-      "time": "8:00 AM – 4:00 PM",
+      "time": "8:00am – 4:00pm",
       "address": "8824 Brownsford Rd. Fountain Run, TN 37073",
-      "type": "summer camp",
+      "type": "Summer camp",
       "theme": "Sports",
       "description":
         "Barefoot Republic is a multi-cultural camp that celebrates diversity and builds unity by facilitating the development of Christ-centered relationships between individuals from diverse cultural, racial and socioeconomic backgrounds. The camp sets upon 110 acres on Barren Lake just north of Nashville and hosts 6 sessions of overnight camp for rising 3rd-12th graders and 2 weeks of day camp for rising 1st-5th graders in Nashville and Franklin, TN. Each session is filled with action-packed and team-building activities, small group time and inspiring evening programs designed to build lifelong friendships. Instruction is given in specialty areas including traditional athletics, extreme sports, performing arts and fine arts."
@@ -29,48 +29,84 @@
       "imgUrl":
         "https://travellersrestplantation.org/wp-content/uploads/2017/03/CWofficertraining.jpg",
       "activityUrl": "https://travellersrestplantation.org/",
-      "time": "8:00 AM – 4:00 PM",
+      "time": "8:00am – 4:00pm",
       "address": "636 Farrell Parkway",
-      "type": "summer camp",
+      "type": "Summer camp",
       "theme": "Sports",
       "description":
         "School, home-school and scout programs are available year round, focusing on teaching kids about historic Nashville life. Special events throughout the year include The World of the Plantation in April and a Spring Sampler in May.Travel through history and experience a summer of adventure at Travellers Rest Summer Camp, winner of Nickelodeon’s Parents Pick Best Day Cam in Nashville. Junior Docent camp, Histories Mysteries camp, hands-on history camp, folk arts camp, adventures in history camp (includes civil war and frontier adventures."
     },
     "activity4": {
+      "name": "Boo at the zoo",
+      "imgUrl":
+        "http://kvbb945.com/wp-content/uploads/2017/09/Boo-2015-web.jpg",
+      "activityUrl": "https://www.nashvillezoo.org/upcoming-events/entry/boo/instance/10-18-2018",
+      "time": "5:00pm - 9:00pm",
+      "address": "3777 Nolensville Pike, Nashville, TN 37211",
+      "type": "Activity",
+      "theme": "Tradition",
+      "description":
+        "Grab your favorite costume and join us for 11 nights of delightfully frightful fun during our annual Halloween tradition, Boo at the Zoo!."
+    },
+    "activity5": {
       "name": "Gordon JCC Camp Davis",
       "imgUrl":
         "https://nashvillefunforfamilies.com/wp-content/uploads/2018/01/camp-davis-image-5.jpg",
       "activityUrl": "https://www.campdavisnashville.com/",
-      "time": "8:00 AM - 6:00 PM",
+      "time": "8:00am - 6:00pm",
       "address": "3088 Smith Springs Rd. Antioch, TN 37013",
-      "type": "summer camp",
+      "type": "Summer camp",
       "theme": "Outdoor",
       "description":
         "Located on gorgeous 52-acre facility, Camp Davis has been  creating summer memories for nearly 90 years. Camp is not just summertime childcare it is a family. At Camp Davis we provide our family members with foundation for growth, which they will use to change the world."
     },
-    "activity5": {
+    "activity6": {
       "name": "Camp Widjiwagan",
       "imgUrl":
         "https://cat-rails-production.s3.amazonaws.com/uploads/auction/item/image/82576/big_image_widji.jpg",
       "activityUrl": "https://barefootrepublic.org/",
-      "time": "8:00 AM – 4:00 PM",
+      "time": "8:00am – 4:00pm",
       "address": "8824 Brownsford Rd. Fountain Run, TN 37073",
-      "type": "summer camp",
+      "type": "Summer camp",
       "theme": "Sports",
       "description":
         "Every day at YMCA Camp Widjiwagan’s Day Camp (Ages 4-16) is packed with challenge, fun, and excitement. General activities available at Camp Widjiwagan include canoeing, archery, swimming, ropes activities, drama, nature activities, arts and crafts, sports, and many more! Our Traditional Day Camp is divided into six “Nations” by age. Each activity is led by a counselor and provides opportunities for your camper to meet and participate with a wide variety of new friends! Check into the Intro to Music Add-On, Widji Color Olympics week, and Fully-Themed Camps including Pirate, Princess, Lego, and Nerf. The Equestrian Day Camp department added Pony Camp and many new Farm Camp animals."
     },
-    "activity6": {
+    "activity7": {
       "name": "CreeKSide Ridgin Academy & Stables",
       "imgUrl":
         "http://creeksideridingstables.com/wp-content/uploads/2017/05/Anna-jumping-Dreamer-768x432.jpg",
       "activityUrl": "http://creeksideridingstables.com/",
-      "time": "8:00 AM – 3:00 PM",
+      "time": "8:00am – 3:00pm",
       "address": "2359 Lewisburg Pike, Franklin, Tn 37064",
       "type": "Summer camp",
       "theme": "Sports",
       "description":
         "We offer horseback riding near Nashville, horseback riding lessons, trail rides near Nashville, trail riding in Franklin, Horse & Pony Birthday Parties, Group Horseback Trail Rides, riding lessons, Pony Parties, Trail rides, horse trail riding and more. We have information on horse boarding, riding arenas, round pens, horse purchases, horses for sale, etc."
+    },
+    "activity8": {
+      "name": "Zoovie Night",
+      "imgUrl":
+        "https://www.speakcdn.com/assets/2147/zoovienight.jpg",
+      "activityUrl": "https://www.nashvillezoo.org/upcoming-events/entry/august-zoovie/instance/8-31-2018",
+      "time": "08/31/2018, 6:00pm - 10:00pm",
+      "address": "3777 Nolensville Pike, Nashville, TN 37211",
+      "type":"Activity",
+      "theme": "Recreational",
+      "description":
+        "Zoovie Nights include games, inflatables, music, and after-hours access to the carousel and zip line! When the sun goes down the evening’s feature film will play on a large inflatable screen, so pack a blanket and head to the Zoo!"
+    },
+    "activity9": {
+      "name": "Zoovie Night",
+      "imgUrl":
+        "https://www.speakcdn.com/assets/2431/yoga_sqtemp.jpg",
+      "activityUrl": "http://www.adventuresci.org/yoga",
+      "time": "09/27/2018, 9:00am - 12:00pm",
+      "address": "800 Fort Negley Blvd, Nashville, TN 37203",
+      "type":"Activity",
+      "theme": "Sports",
+      "description":
+        "Stunning NASA visualizations, 6.5 million stars, and inner peace await at Yoga Under the Stars. While normal yoga practices focus on finding inner peace, Yoga Under the Stars brings an outward shift to the experience.  The stunning visuals displayed on Sudekum Planetarium’s magnificent 63-foot dome inspire thought on the scale of the universe and humanity’s place within it."
     }
   }
 }
