@@ -29,7 +29,7 @@ class SingleActivity extends React.Component {
   };
 
   render() {
-    const { comment, rating } = this.state;
+    const { comment} = this.state;
     const { saved, details} = this.props;
     // const {to } = this.props;
     const url = (`${details.activityUrl}`);
@@ -87,6 +87,7 @@ class SingleActivity extends React.Component {
                 starCount={5}
                 editing={false}
                 value={4}
+              
                 // onStarClick={this.onStarClick.bind(this)}
                 onChange={this.ratingChanged}
                 // renderStarIcon={() => <span></span> }
