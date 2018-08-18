@@ -75,7 +75,7 @@ class SingleActivity extends React.Component {
           {saved ? (
             <div className="myCollectionFooter">
               <button className="btn btn-default btn-sm glyphicon glyphicon-comment" onClick={showForm}>
-              </button>
+              </button> 
               <button className="btn btn-danger btn-sm glyphicon glyphicon-trash pull-right" onClick={deleteCollection}>
               </button>
             </div>

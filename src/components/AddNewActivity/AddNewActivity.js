@@ -95,15 +95,15 @@ class AddNewActivity extends React.Component {
     return (
     // <div>
     // <form onSubmit={this.formSubmit}>
-      <div className="AddNewActivity text-center">
-        {/* <form onSubmit={this.formSubmit}> */}
-          <Form horizontal onSubmit={this.formSubmit} className="col-md-6 col-md-offset-3">
+      <div className="AddNewActivity">
+        <h3 className="recommendationHeader"> Create Activity </h3>
+          <Form horizontal onSubmit={this.formSubmit}>
           {/* <form onSubmit={this.formSubmit}> */}
             <FormGroup controlId="name">
               <Col componentClass={ControlLabel} sm={2}>
                 Name
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="name"
@@ -117,7 +117,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Image Url
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="image"
@@ -131,7 +131,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Activity Url
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="activity"
@@ -145,7 +145,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Time
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="time"
@@ -159,7 +159,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Where
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   id="address"
@@ -173,7 +173,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Type
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="type"
@@ -187,7 +187,7 @@ class AddNewActivity extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Theme
               </Col>
-              <Col sm={6}>
+              <Col sm={8}>
                 <FormControl
                   type="text"
                   // id="theme"
@@ -199,12 +199,12 @@ class AddNewActivity extends React.Component {
             </FormGroup>
             <FormGroup controlId="description">
               <Col componentClass={ControlLabel} sm={2}>
-              <ControlLabel>Textarea</ControlLabel>
+              {/* <ControlLabel>Textarea</ControlLabel> */}
                 Description
               </Col>
-              <Col sm={6}>
+              <Col className="textHolder" sm={8}>
                 <FormControl
-                  type="text"
+                  componentClass="textarea"
                   // id="description"
                   placeholder="Fun"
                   value={newActivity.description}
@@ -212,10 +212,14 @@ class AddNewActivity extends React.Component {
                 />
               </Col>
             </FormGroup>
+            {/* <FormGroup controlId="formControlsTextarea">
+      <ControlLabel>Textarea</ControlLabel>
+      <FormControl componentClass="textarea" placeholder="textarea" />
+    </FormGroup> */}
 
             <FormGroup>
             <Col smOffset={2} sm={10}>
-            <Button type="submit">Submit</Button>
+            <Button className="recommendationButton" type="submit">Submit</Button>
             </Col>
             </FormGroup>
         </Form>

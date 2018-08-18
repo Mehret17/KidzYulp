@@ -34,11 +34,11 @@ class SingleRecommendation extends React.Component {
 
 
     return (
-      <div className="singleRecommendation col-xs-8 col-xm-offset-4 row">
-        <div className="imgContainer col-xs-4">
+      <div className="singleRecommendation col-sm-6 col-sm-offset-3">
+        <div className="col-sm-3">
             <img className="recommImage" src={recomDetails.imgUrl} alt={recomDetails.imgUrl} />
         </div>
-        <div>
+        <div className="col-sm-3">
             <h3 className="name">{recomDetails.name}</h3>
             <p className="time">Time: {recomDetails.time}</p>
             <p className="address">Address: {recomDetails.address}</p>
@@ -46,7 +46,7 @@ class SingleRecommendation extends React.Component {
             <p className="theme">Theme: {recomDetails.theme}</p>
             <p className="description">{recomDetails.description}</p>
             <button className="btn btn-default btn-sm glyphicon glyphicon-pencil" onClick={edit}></button>
-            <button className="btn btn-default btn-sm glyphicon glyphicon-trash" onClick={deleteActivity}></button>
+            <button className="btn btn-default btn-sm glyphicon glyphicon-trash pull-right" onClick={deleteActivity}></button>
 
             {
               this.state.isEditing ? (

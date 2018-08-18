@@ -34,14 +34,21 @@ div h1 {
 }
 // }
 
-.btn-lg {
+.exploreButton {
   margin: 0;
   position: absolute;
   top: 88%;
   left: 45%;
   border-radius: 35px;
+  color: white;
+  background-color: #68156f;
 }
 
-// a {
-//   color: #68156f !important;
+button>a {
+  color: white !important;
+}
+
+// a:hover {
+//   background-color:  #68156f;
+//   color: white;
 // }
