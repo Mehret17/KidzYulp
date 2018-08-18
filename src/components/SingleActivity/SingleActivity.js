@@ -64,11 +64,8 @@ class SingleActivity extends React.Component {
           <p className="address">{details.address}</p>
           <p className="type">{details.type}</p>
           <p className="theme">{details.theme}</p>
-          {/* <p className="description">{details.description}</p> */}
-          
-          {/* <a>=>{details.activityUrl}</a> */}
 
-          <a href={url} >{url}</a>
+          <a className="activityUrl" href={url} >{url}</a>
           {comment ? <p className="comment">{details.comment}</p> : null}
          
     
