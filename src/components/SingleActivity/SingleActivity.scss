@@ -37,6 +37,7 @@ body {
     position: relative;
     height: 2.625em;
     color:  #68156f;
+    text-transform: uppercase;
 
   }
 
@@ -68,7 +69,7 @@ textarea {
   border: 1px solid #68156f;
 	border-radius: 10px;
 	height: 60px;
-  width: 260px;
+  width: 285px;
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
@@ -78,15 +79,11 @@ textarea {
 //   position: relative;
 
 fieldset>button.update{
-    left: 11px;
+   margin-left: 10px;
     color: blue;
     // border-radius: 35px;
 }
 fieldset>button.remove{
-  right: 11px;
-  color: red;
-  // border-radius: 35px;
+  margin-right: 10px;
+  color: tomato;
 }
-// .thumbnail {
-//   height: 100px;
-// }

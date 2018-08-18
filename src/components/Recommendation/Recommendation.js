@@ -60,7 +60,6 @@ class Recommendation extends React.Component {
 
     return (
       <div>
-        {/* <h1>Recommendation</h1> */}
         <ul>
           {newActivityComponent}
         </ul>

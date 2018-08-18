@@ -11,7 +11,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 105vh;
   width: 100%;
   margin-top: -20px; 
   overflow: hidden;
@@ -23,7 +23,6 @@
   font-family: 'Gloria Hallelujah', cursive;
   font-weight: 900;
   color: white;
-  // text-transform: uppercase;
   margin: 0;
   position: absolute;
   top: 70%;
@@ -32,7 +31,7 @@
   transform: translate(-50%, -50%);
   overflow: hidden;
 }
-// }
+
 
 .exploreButton {
   margin: 0;
@@ -48,7 +47,3 @@ button>a {
   color: white !important;
 }
 
-// a:hover {
-//   background-color:  #68156f;
-//   color: white;
-// }

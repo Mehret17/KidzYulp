@@ -87,13 +87,11 @@ class Activity extends React.Component {
     return (
       <div className="Activity header">
         <div className="pictureHolder">
-        {/* <h1> Find Activities Near You</h1> */}
         <Slide
            images = {this.images}
            duration = {5000}
            transitionDuration={1000}
          />
-           {/* <h1> Find Activities Near You</h1> */}
          </div>
         <div className="mainBody">
           {/* <div className="addNewActivityBtn"> */}
