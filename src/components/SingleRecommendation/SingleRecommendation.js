@@ -34,18 +34,20 @@ class SingleRecommendation extends React.Component {
 
 
     return (
-      <div className="singleRecommendation">
-        <div className="container">
-          <div className="col-sm-3">
-            <img src={recomDetails.imgUrl} alt={recomDetails.imgUrl} />
+      <div className="singleRecommendationContainer">
+      <div className="col-xs-6 col-sm-3">
+          {/* <div className="thumbnail"> */}
+        <div className="pictureContainer thumbnail">
+            <img className="recommImage" src={recomDetails.imgUrl} alt={recomDetails.imgUrl} />
+        <div className="recomDescription">
             <h3 className="name">{recomDetails.name}</h3>
-            <p className="time">{recomDetails.time}</p>
-            <p className="address">{recomDetails.address}</p>
-            <p className="type">{recomDetails.type}</p>
-            <p className="theme">{recomDetails.theme}</p>
+            <p className="time">Time: {recomDetails.time}</p>
+            <p className="address">Address: {recomDetails.address}</p>
+            <p className="type">Type: {recomDetails.type}</p>
+            <p className="theme">Theme: {recomDetails.theme}</p>
             <p className="description">{recomDetails.description}</p>
-            <button className="btn btn-primary" onClick={edit}>Edit</button>
-            <button className="btn btn-danger" onClick={deleteActivity}>Delete</button>
+            <button className="btn btn-default btn-sm glyphicon glyphicon-pencil" onClick={edit}></button>
+            <button className="btn btn-default btn-sm glyphicon glyphicon-trash pull-right" onClick={deleteActivity}></button>
 
             {
               this.state.isEditing ? (
@@ -58,8 +60,9 @@ class SingleRecommendation extends React.Component {
               ) : null
             }
           </div>
+          </div>
+          </div>
         </div>
-      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {Slide} from 'react-slideshow-image';
 
 // import StarRatingComponent from 'react-star-rating-component';
@@ -44,8 +44,9 @@ class Activity extends React.Component {
   
 
   images = [
-    require('../../images/legoyellow.jpg'),
-    require('../../images/kidsplayingballC.jpg'),
+    require('../../images/girl.png'),
+    require('../../images/funkids.jpg'),
+    require('../../images/anotherpic.jpg')
   ];
 
   formSubmitEvent = (newActivity) => {
@@ -86,15 +87,17 @@ class Activity extends React.Component {
     return (
       <div className="Activity header">
         <div className="pictureHolder">
+        {/* <h1> Find Activities Near You</h1> */}
         <Slide
            images = {this.images}
            duration = {5000}
            transitionDuration={1000}
          />
+           {/* <h1> Find Activities Near You</h1> */}
          </div>
         <div className="mainBody">
-          <div className="addNewActivityBtn">
-            <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div>
+          {/* <div className="addNewActivityBtn"> */}
+            {/* <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}></Link></div> */}
             <br/>
           {activityComponents}
         </div>

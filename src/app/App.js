@@ -11,7 +11,7 @@ import AddNewActivity from '../components/AddNewActivity/AddNewActivity';
 import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import MyCollection from '../components/MyCollection/MyCollection';
-import Navbar from '../components/Navbar/Navbar';
+import NavBar from '../components/Navbar/NavBar';
 import Recommendation from '../components/Recommendation/Recommendation';
 import Register from '../components/Register/Register';
 import ActivityLineItem from '../components/ActivityLineItem/ActivityLineItem';
@@ -94,7 +94,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div>
-            <Navbar
+            <NavBar
               authed={this.state.authed}
               signOut={this.signOut}
               />

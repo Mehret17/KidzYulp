@@ -1,11 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import newActivityRequests from '../../firebaseRequests/addnewactivity';
 import authRequests from "../../firebaseRequests/auth";
 
-import "./Navbar.css";
+import "./NavBar.css";
 
-class Navbar extends React.Component {
+class NavBar extends React.Component {
+
+  formSubmitEvent = (newActivity) => {
+    newActivityRequests.postNewActivity(newActivity)
+      .then(() => {
+      })
+      .catch((err) => {
+        console.error('error with activity post', err);
+      })
+  };
+
   render() {
     const { authed, signOut } = this.props;
     const logoutClickEvent = () => {
@@ -14,8 +25,9 @@ class Navbar extends React.Component {
     };
 
     return (
-      <div className="Navbar">
-        <nav className="navbar navbar-inverse">
+
+      <div>
+        <nav className="navbar navbar-fixed-top">
           <div className="container-fluid">
             <div className="navbar-header">
               <button
@@ -40,9 +52,9 @@ class Navbar extends React.Component {
             >
               {authed ? (
                 <ul className="nav navbar-nav navbar-right">
-                  {/* <li>
-                      <Link to="/activity">Activity</Link>
-                    </li> */}
+                  <li>
+                      <Link to="/activity"> Activity </Link>
+                    </li>
                   <li>
                     <Link to="/mycollection">My Collection</Link>
                   </li>
@@ -50,13 +62,13 @@ class Navbar extends React.Component {
                     <Link to="/recommendation">Recommendation</Link>
                   </li>
                   <li>
-                    <Link to="/addnewactivity">Create Activity</Link>
+                  <Link to={{ pathname: "/addnewactivity", onSubmit: this.formSubmitEvent }}>Create Event</Link>
                   </li>
 
                   <li className="navbar-form">
                     <button
                       onClick={logoutClickEvent}
-                      className="btn btn-danger"
+                      className="btn btn-default logout"
                     >
                       Logout
                     </button>
@@ -80,4 +92,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default NavBar;

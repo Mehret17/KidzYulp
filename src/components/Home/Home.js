@@ -12,7 +12,8 @@ class Home extends React.Component {
         to={{ pathname: this.props.authed ? '/activity' : '/login' }}
       /> */}
       <h1> KidzYulp </h1>
-      <button className="btn btn-default btn-lg">
+      <button className="btn btn-default btn-lg exploreButton">
+       {/* <Link to={{pathname: this.props.authed ? "/activity" :"/login"}}>Explore</Link></button> */}
        <Link to={{pathname: this.props.authed ? "/activity" :"/login"}}>Explore</Link></button>
       </div>
     );
