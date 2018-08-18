@@ -34,11 +34,12 @@ class SingleRecommendation extends React.Component {
 
 
     return (
-      <div className="singleRecommendation col-sm-6 col-sm-offset-3">
-        <div className="col-sm-3">
+      <div className="singleRecommendationContainer">
+      <div className="col-xs-6 col-sm-3">
+          {/* <div className="thumbnail"> */}
+        <div className="pictureContainer thumbnail">
             <img className="recommImage" src={recomDetails.imgUrl} alt={recomDetails.imgUrl} />
-        </div>
-        <div className="col-sm-3">
+        <div className="recomDescription">
             <h3 className="name">{recomDetails.name}</h3>
             <p className="time">Time: {recomDetails.time}</p>
             <p className="address">Address: {recomDetails.address}</p>
@@ -58,6 +59,8 @@ class SingleRecommendation extends React.Component {
                 </ReactModal>
               ) : null
             }
+          </div>
+          </div>
           </div>
         </div>
     );

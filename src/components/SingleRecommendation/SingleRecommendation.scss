@@ -1,10 +1,14 @@
-.singleRecommendation {
+.singleRecommendationContainer {
   margin-top: 65px;
-  border: 1px solid #ddd;
+  // border: 1px solid #ddd;
   border-radius: 4px;
   padding-bottom: 10px;
-  background-color: lighten(#68156f, 50);
+  // background-color: lighten(#68156f, 50);
+  // min-width: 70%;
+  // border: 1px solid #e6e6e6;
+  // background: white;
 }
+
 
 .name {
   word-wrap: break-word !important;
@@ -19,10 +23,24 @@
   color: #68156f;
 }
 
-.imgContainer {
-  max-width: 100%;
-  max-height: 100%;
+.pictureContainer {
+  border: 1px solid  #68156f;
 }
+.recommImage{
+  // float: left;
+    width: 300px;
+    height: 200px;
+    border-bottom: none;
+    border-right: 1px solid #e6e6e6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+}
+
+// .imgContainer {
+//   max-width: 100%;
+//   max-height: 100%;
+// }
 
 .recommDetails {
   text-align: justify;
@@ -35,7 +53,7 @@
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   margin-bottom: 6px;
-  max-width: 100%
-  // max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   // max-width: 100%;
 }

@@ -85,8 +85,9 @@ class SingleActivity extends React.Component {
               <StarRating
                 name="rate"
                 starCount={5}
-                value={rating}
-                onStarClick={this.onStarClick.bind(this)}
+                editing={false}
+                value={4}
+                // onStarClick={this.onStarClick.bind(this)}
                 onChange={this.ratingChanged}
                 // renderStarIcon={() => <span></span> }
               />

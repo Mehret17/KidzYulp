@@ -12,11 +12,14 @@ body {
  
 
   .activityImage {
-    height: 180px;
+    width: 300px;
+    height: 200px;
+    // height: 180px;
     overflow: hidden;
     border-bottom: 1px solid #e6e6e6;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    border-top-right-radius: 0;
     margin-bottom: 6px;
   }
   .starRating {

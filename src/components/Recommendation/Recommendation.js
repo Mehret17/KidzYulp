@@ -59,7 +59,7 @@ class Recommendation extends React.Component {
     });
 
     return (
-      <div className="text-center">
+      <div>
         {/* <h1>Recommendation</h1> */}
         <ul>
           {newActivityComponent}
