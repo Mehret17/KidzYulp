@@ -74,6 +74,12 @@ textarea {
   margin-left: 10px;
   padding: 0;
 }
+.ActivityCard>a{
+  word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+
+}
 
 // fieldset {
 //   position: relative;
