@@ -60,10 +60,8 @@ class Activity extends React.Component {
     activityRequests
       .getRequest()
       .then(activities => {
-       // newActivityRequests.getNewActivity().then(newactivities => {
           this.setState({ activities: [...activities]});
         })
-      //})
       .catch(err => {
         console.error("error with activity get request", err);
       });
