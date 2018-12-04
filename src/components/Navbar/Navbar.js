@@ -11,6 +11,7 @@ class NavBar extends React.Component {
   formSubmitEvent = (newActivity) => {
     newActivityRequests.postNewActivity(newActivity)
       .then(() => {
+        newActivityRequests.postNewActivityToActivityDb(newActivity)
       })
       .catch((err) => {
         console.error('error with activity post', err);
