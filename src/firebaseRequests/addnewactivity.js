@@ -55,6 +55,20 @@ const postNewActivity = (listing) => {
   });
 };
 
+const postNewActivityToActivityDb = (newActivity) => {
+  return new Promise ((resolve , reject ) => {
+    axios
+     .post(`${constants.firebaseConfig.databaseURL}/activities.json`,newActivity)
+     .then((res) => {
+       resolve(res.data);
+     })
+     .catch((err) => {
+       reject(err);
+     });
+   });
+};
+
+
 const deleteNewActivity = (newActivityId) => {
   return new Promise ((resolve, reject) => {
     axios
@@ -96,4 +110,4 @@ const getSingleNewActivityRequest = (id) => {
   });
 };
 
-export default {getNewActivity, postNewActivity, getNewActivities, deleteNewActivity, updateRecommendation, getSingleNewActivityRequest}
+export default {getNewActivity, postNewActivity, getNewActivities, deleteNewActivity, updateRecommendation, getSingleNewActivityRequest, postNewActivityToActivityDb}
